@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+                    <h4>Не офіційний веб-сайт</h4>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li class = "active"><a href='/address'>Адреси органів влади</a></li>
+					<li><a href='/data'>Відомості про осіб, що проходять перевірку</a></li>
+					<li><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+                                    </div><div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Адреси органів влади</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+      
+       <p><div class="tab-content">
+                <div class="tab-pane active" id="acting">
+                    <table class="table" id="table-search">
+                        <thead>
+                        <tr>
+                            <th width="30%">Назва органу</th>
+                            <th width="">Поштова адреса</th>
+                            <th width="">Електронна адреса</th>
+                            <th width="">Контактний номер телефону</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+							<tr>
+								<td>Міністерство юстиції України</td>
+								<td nowrap>01001, м. Київ, <br />вул. Городецького, 13</td>
+								<td><a href = "mailto:lustration@minjust.gov.ua">lustration@minjust.gov.ua</a></td>
+								<td>(044) 271-15-24</td>
+							</tr>
+							<tr>
+								<td>Міністерство внутрішніх справ України</td>
+								<td nowrap>01601, м. Київ, <br />вул.Богомольця, 10</td>
+								<td><a href = "mailto:lustration@mvs.gov.ua">lustration@mvs.gov.ua</a></td>
+								<td>(044) 256-11-10</td>
+							</tr>
+														<tr>
+								<td>Державна фіскальна служба України</td>
+								<td nowrap>м. Київ,<br> Львівська площа, 8</td>
+								<td><a href = "mailto:dopomoga@minrd.gov.ua">dopomoga@minrd.gov.ua</td>
+								<td>(044) 454-16-00</td>
+							</tr>
+														<tr>
+								<td>Служба безпеки України</td>
+								<td nowrap>01601, м. Київ,<br> вул.Володимирська, 33</td>
+								<td><a href = "mailto:sbu_public@ssu.gov.ua">sbu_public@ssu.gov.ua</td>
+								<td>(080) 050-14-82</td>
+							</tr>
+														<tr>
+								<td>Генеральна прокуратура України</td>
+								<td nowrap>01011, м. Київ,<br> вул. Різницька, 13/15</td>
+								<td><a href = "mailto:public@gp.gov.ua">public@gp.gov.ua</td>
+								<td>(044) 280-10-20</td>
+							</tr>
+														<tr>
+								<td>Державна судова адміністрація України</td>
+								<td nowrap>01601, м. Київ,<br> вул. Липська, 18/5</td>
+								<td><a href = "mailto:inbox@court.gov.ua">inbox@court.gov.ua</td>
+								<td>(044) 277-76-00</td>
+							</tr>
+
+                            <tr>
+                                <td>Головне управління юстиції Міністерства юстиції України в Автономній Республіці Крим</td>
+                                <td nowrap>95006, м. Сімферополь,<br />
+                                    вул. Долгоруковська 16
+                                </td>
+                                <td><a href="mailto:erika@crimea.minjust.gov.ua">erika@crimea.minjust.gov.ua</a><br />
+                                    <a href="mailto:oodik@crimea.minjust.gov.ua">oodik@crimea.minjust.gov.ua</a>
+                                </td>
+                                <td>(0652) 256122<br />(0652) 546305</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Вінницькій області</td>
+                                <td nowrap>21036, м. Вінниця,<br />
+                                    Хмельницьке шосе, 7
+                                </td>
+                                <td><a href="mailto:just_vinnitsja@i.ua">just_vinnitsja@i.ua</a></td>
+                                <td>(0432) 660136<br />(0432) 660663</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Волинській області</td>
+                                <td nowrap>43001, м. Луцьк,<br />
+                                    вул. Володимирська, 1
+                                </td>
+                                <td><a href="mailto:sektornpa@gmail.com">sektornpa@gmail.com</a></td>
+                                <td>(0332) 784661 </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Дніпропетровській області</td>
+                                <td nowrap>49027, м. Дніпропетровськ,<br /> просп. К. Маркса, 21-а</td>
+                                <td><a href="mailto:kadru_obljust@ukr.net">kadru_obljust@ukr.net</a></td>
+                                <td>(0562) 470973</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Донецькій області</td>
+                                <td nowrap>84333, м. Краматорськ,<br /> вул. Шкадінова, 20</td>
+                                <td><a href="mailto:kadry347@gamail.cjv">kadry347@gamail.cjv</a></td>
+                                <td>099 2848437</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Житомирській області </td>
+                                <td nowrap>10014, м. Житомир,<br /> майдан Соборний, 1</td>
+                                <td><a href="mailto:ya.holub@zt.minjust.gov.ua">ya.holub@zt.minjust.gov.ua</a><br /><a href="mailto:n.yaroshenko@zt.minjust.gov.ua">n.yaroshenko@zt.minjust.gov.ua </a> </td>
+                                <td>(0412) 374930<br />(0412) 377993 </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Закарпатській області</td>
+                                <td nowrap>88008, м. Ужгород,<br />
+                                    пл. Народна, 4
+                                </td>
+                                <td><a href="mailto:info@zk.minjust.gov.ua">info@zk.minjust.gov.ua</a></td>
+                                <td>(03122) 34253</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції в Запорізькій області</td>
+                                <td nowrap>69107, м. Запоріжжя,<br /> просп. Леніна, 164</td>
+                                <td><a href="mailto:kadrguy@justzp.gov.ua">kadrguy@justzp.gov.ua</a></td>
+                                <td>(061) 2390243<br /> (061) 2390445</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Івано-Франківській області</td>
+                                <td nowrap>76000, м. Івано-Франківськ,<br /> вул. Грюнвальдська, 11 </td>
+                                <td><a href="mailto:m.tsiurpita@if.minjust.gov.ua">m.tsiurpita@if.minjust.gov.ua</a></td>
+                                <td>(0342) 750673</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Київській області</td>
+                                <td nowrap>04071, м. Київ,<br /> вул. Ярославська, 5/2</td>
+                                <td><a href="mailto:kadritera_kievobljust@ukr.net">kadritera_kievobljust@ukr.net</a></td>
+                                <td>(044) 4625148</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Кіровоградській областії</td>
+                                <td nowrap>25006, м. Кіровоград,<br /> вул. Дворцова, 6/7 </td>
+                                <td><a href="mailto:s.yamkovyi@kr.minjust.gov.ua">s.yamkovyi@kr.minjust.gov.ua</a><br /><a href="mailto:a.hrymaliuk@kr.minjust.gov.ua">a.hrymaliuk@kr.minjust.gov.ua</a> </td>
+                                <td>(0522) 356647<br />(0522) 356633</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Луганській області</td>
+                                <td nowrap>93400,  м. Сєвєродонецьк,<br />  вул. 8 березня, 1 </td>
+                                <td><a href="mailto:vks@uprjust.lg.ua">vks@uprjust.lg.ua</a></td>
+                                <td>(06452) 44905</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Львівській області</td>
+                                <td nowrap>79000, м. Львів,<br /> пл. М. Шашкевича, 1</td>
+                                <td><a href="mailto:lvivlustacia@gmail.com">lvivlustacia@gmail.com</a></td>
+                                <td>(032) 2612361</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Миколаївській області </td>
+                                <td nowrap>54020, м. Миколаїв,<br /> вул. 8 Березня, 107</td>
+                                <td><a href="mailto:mk_anticorruption@ukr.net">mk_anticorruption@ukr.net</a></td>
+                                <td>(0512) 476112</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції в Одеській області </td>
+                                <td nowrap>65028, м. Одеса,<br />
+                                    вул. Б. Хмельницького, 34
+                                </td>
+                                <td><a href="mailto:i.chumak@od.minjust.gov.ua">i.chumak@od.minjust.gov.ua</a></td>
+                                <td>(048) 7054491</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Полтавській області</td>
+                                <td nowrap>36001, м. Полтава,<br />
+                                    вул. Жовтнева, 45
+                                </td>
+                                <td><a href="mailto:lustration@just.gov.ua">lustration@just.gov.ua</a></td>
+                                <td>(05322) 75140</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Рівненській області</td>
+                                <td nowrap>33028, м. Рівне,<br />
+                                    вул. Замкова, 22-а
+                                </td>
+                                <td><a href="mailto:rvlustration@ukr.net">rvlustration@ukr.net</a></td>
+                                <td>067 3887415</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Сумській області </td>
+                                <td nowrap>40003, м. Суми,<br />
+                                    вул. Герасима Кондратьєва, 28
+                                </td>
+                                <td><a href="mailto:m.zubko@sm.minjust.gov.ua">m.zubko@sm.minjust.gov.ua</a></td>
+                                <td>(0542) 661935<br />
+                                    050 9548110
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Тернопільській області</td>
+                                <td nowrap>46001, м. Тернопіль,<br />
+                                    вул. Грушевського, 8
+                                </td>
+                                <td><a href="mailto:kadry@te.minjust.gov.ua">kadry@te.minjust.gov.ua</a></td>
+                                <td>(0352) 524275</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Харківській області</td>
+                                <td nowrap>61024, м. Харків,<br />
+                                    вул. Петровського, 16
+                                </td>
+                                <td><a href="mailto:lustration@kh.minjust.gov.ua">lustration@kh.minjust.gov.ua</a></td>
+                                <td>(057) 7518183<br />
+                                    (057) 7518488
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Херсонській області</td>
+                                <td nowrap>73003, м. Херсон,<br />
+                                    вул. К. Маркса, 42/14
+                                </td>
+                                <td><a href="mailto:ks-lustration@ukr.net">ks-lustration@ukr.net</a></td>
+                                <td>(0552) 263726<br />
+                                    (0552) 263289
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Хмельницькій області</td>
+                                <td nowrap>29000, м. Хмельницький,<br />
+                                    вул. М. Грушевського, 87
+                                </td>
+                                <td><a href="mailto:i.yatsyshyna@km.minjust.gov.ua">i.yatsyshyna@km.minjust.gov.ua</a><br />
+                                    <a href="mailto:a.andriievskyi@km.minjust.gov.ua">a.andriievskyi@km.minjust.gov.ua</a>
+                                    <a href="mailto:m.shnyra@km.minjust.gov.ua">m.shnyra@km.minjust.gov.ua</a>
+                                </td>
+                                <td>(0382) 656077<br />
+                                    (0382) 616089
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Черкаській області</td>
+                                <td nowrap>18000, м. Черкаси,<br />
+                                    вул. Шевченка, 185
+                                </td>
+                                <td><a href="mailto:kadr_upr@ukr.net">kadr_upr@ukr.net</a></td>
+                                <td>(0472) 450526</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Чернівецькій області</td>
+                                <td nowrap>58010, м. Чернівці,<br />
+                                    вул. М. Грушевського, 1
+                                </td>
+                                <td><a href="mailto:kadry@ev.minjust.gov.ua">kadry@ev.minjust.gov.ua</a></td>
+                                <td>(0372) 550961</td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у Чернігівській області</td>
+                                <td nowrap>14000, м. Чернігів,<br />
+                                    Проспект Миру, 43
+                                </td>
+                                <td><a href="mailto:kadrovarobota@ukr.net">kadrovarobota@ukr.net</a></td>
+                                <td>(0462) 778215<br />
+                                    (0462) 604928<br />
+                                    (0462) 672834
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Головне управління юстиції у м.Києві</td>
+                                <td nowrap>01001, м. Київ,<br />
+                                    пров. Музейний, 2-Д
+                                </td>
+                                <td><a href="mailto:BondarchukNV@gmail.com">BondarchukNV@gmail.com</a><br />
+                                    <a href="mailto:mail.from.ann@gmail.com">mail.from.ann@gmail.com</a>
+                                </td>
+                                <td>(044) 2705860
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Головне управління юстиції у м.Севастополі</td>
+                                <td nowrap>99011, м. Севастополь,<br />
+                                    вул. 4-та Бастіонна,  3
+                                </td>
+                                <td><a href="mailto:sevjust@ukr.net">sevjust@ukr.net</a></td>
+                                <td>(0692) 55-36-41</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div></p>
+        </div>
+    </div>
+</div><div class="container">&copy; 2020 «Веселі Хлопці»</div>
+</body>
+</html>

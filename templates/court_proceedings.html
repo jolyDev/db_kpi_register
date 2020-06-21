@@ -1,0 +1,857 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+                    <h4>Не офіційний веб-сайт</h4>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li ><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+					<li><a href='/data'>Відомості про осіб, що проходять перевірку</a></li>
+					<li><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li class="active"><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+                                    </div><div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Судові провадження</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+      
+       <p><center><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Інформація, актуальна станом на 13.02.2018</span></center>
+<table border="0" cellspacing="0"><colgroup width="68"></colgroup> <colgroup width="115"></colgroup> <colgroup width="1176"></colgroup>
+<tbody>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;"> </span></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;"> </span></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;"> </span></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td align="left" valign="bottom" height="21"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Увага! Умовні скорочення у тексті таблиці: </span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="bottom"><span style="color: #000000;"> </span></td>
+<td align="left" valign="bottom"><span style="color: #000000;"> </span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">ГПУ</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Генеральна прокуратура України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">ДФС</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Державна фіскальна служба України </span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">МВС</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Міністерство внутрішніх справи України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">МЗС</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Міністерство закордонних справ України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Мінюст</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Міністерство юстиції України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">НБУ</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Національний банк України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">СБУ</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Служба безпеки України</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="105"><span style="color: #000000;"> </span></td>
+<td align="left" valign="middle"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">до прийняття рішення КСУ</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">за конституційними поданнями Верховного Суду України щодо відповідності Конституції України (конституційності) пункту 6 частини першої, пунктів 2, 13 частини другої, частини третьої статті 3 Закону України „Про очищення влади“, 47 народних депутатів України щодо відповідності Конституції України (конституційності) частин третьої, шостої статті 1, частин першої, другої, третьої, четвертої, восьмої статті 3, пункту 2 частини п’ятої статті 5, пункту 2 Прикінцевих та перехідних положень цього закону та Верховного Суду України щодо відповідності Конституції України (конституційності) частини третьої статті 1, пунктів 7, 8, 9 частини першої, пункту 4 частини другої статті 3, пункту 2 Прикінцевих та перехідних положень цього закону.</span></td>
+</tr>
+<tr>
+<td align="left" valign="bottom" height="21"><span style="color: #000000;"> </span></td>
+<td align="left" valign="bottom"><strong><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Закон</span></strong></td>
+<td align="left" valign="bottom"><span style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">Закон України "Про очищення влади"</span></td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellspacing="0"><colgroup width="130"></colgroup> <colgroup width="219"></colgroup> <colgroup width="150"></colgroup> <colgroup width="132"></colgroup> <colgroup width="185"></colgroup> <colgroup width="189"></colgroup> <colgroup width="140"></colgroup> <colgroup width="191"></colgroup>
+<tbody>
+<tr>
+<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="47"><strong><span style="color: #000000; font-family: Times New Roman;">№ справи</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Позивач</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Відповідач</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Третя сторона</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Предмет спору</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Критерій очищення влади, що оскаржується</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Дата початку судового процесу</span></strong></td>
+<td style="border-top: 2px solid #000000; border-right: 2px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Стан розгляду справи</span></strong></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="119"><strong><span style="color: #000000; font-family: Times New Roman;">№ 804/15350/15 </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Андрухів Василь Михайлович</strong> (звільнений з посади начальника Головного управління ДФС у Дніпропетровській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання дій протиправними</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч.1. ст.3, п.7.ч.1 ст.3, п.3 ч.2. ст.3 Закону, з 25.02.2010 по 22.02.2014</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">02.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд у Вищому адміністративному суді України оскарження зупинення розгляду справи до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="194"><strong><span style="color: #000000; font-family: Times New Roman;">№ 804/5924/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Бабієнко Анатолій Миколайович</strong> (звільнений з посади державного виконавеця Дніпропетровського відділу ДВС м. Дніпродзержинськ)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Мін'юст 2.Головне територіальне управління юстиції у Дніпропетровській обл. </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протирпавним та скасування довідки і наказу, поновлення на роботі, стягнення заробітної плати за час вимушеного прогулу, зобов'язання вчинити певні дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Проходив військову службу на штатних посадах КДБ УСРС з 10.09.1988 по 01.01.1992 (п.3 ч.4 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">15.09.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">
+<p>Триває розгляд у Касаційному адміністративному судуі у складі Верховного суду</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="112"><strong><span style="color: #000000; font-family: Times New Roman;">№ 800/407/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Бичковський Євген Леонідович</strong> (суддя Овідіопольського районного суду Одеської обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Вища кваліфікаційна комісія суддів України </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування рішення про відмову у рекомендуванні на посаду судді безстроково</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Закінчив навчання у Вищій школі КДБ СРСР ім. Дзержинського (п.3 ч.4 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">05.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">
+<p>Розгляд справи зупинено Касаційним адміністративним судом у складі Верховного Суду до прийняття рішення КСУ</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="228"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/18156/14 </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Білоус Віталій Владиславович</strong> (звільнений з посади головного наукового співробітника відділу досліджень проблем злочинності в економічній сфері Науково-дослідного інституту Національної академії прокуратури України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Національна академія прокуратури України 2.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.7 ч.1 ст.3, п.8 ч.1 ст.3, п.3 ч.1 ст.3 Закону, 01.09.2011 по 25.02.2014</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">24.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="205"><strong><span style="color: #000000; font-family: Times New Roman;">№ 812/363/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Боришова Тетяна Сергіївна</strong> (звільнена з посади спеціаліста І категорії відділу документування та контролю Луганського міського управління юстиції)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Головне територіальне управління юстиції у Луганській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу на звільнення, поновлення на посаді, задоволення заяви про звільнення, видачу трудової книжки</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст.1 Закону (ч.3 ст.4 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">22.04.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Донецького апеляційного адміністративного суду апеляційну скаргу Головного територіального управління юстиції у Луганській обл. залишено без задоволення (справу завершено)</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="126"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/17946/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Верхогляд Володимир Олексійович </span></strong><span style="color: #000000; font-family: Times New Roman;">(звільнений з посади офіцера з особливих доручень І категорії Групи радників та консультантів Голови СБУ)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">СБУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду начальника Управління СБУ у Дніпропетровській обл. з 02.09.2008 по 01.10.2012 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="210"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/18020/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Голомша Микола Ярославович</strong> (звільнений з посади першого заступника Генерального прокурора України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ГПУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Мін'юст 2.Генеральний прокурор України Ярема В.Г.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення та поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.3 ч.1 ст.3, п.8 ч.1 ст. 1, п. 7 ч.1 ст.3 Закону, з 25.02.2010 по 24.02.2014</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="138"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/25424/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Гошовський Володимир Сергійович</strong> (звільнений з посади першого заступника Голови Державної служби з контролю за наркотиками)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про зобов'язання вилучити відомості з Реєстру</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника Голови Державної служби України з контролю за наркотиками з 21.12.2011 по 16.10.2014 (п. 8 ч. 1 ст. 3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд у Вищому адміністративному суді України </span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="230"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/6601/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Грінько Олександр Олександрович</strong> (звільнений з посади начальника Старобешівського районного управління юстиції Донецької обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Головне територіальне управління юстиції у Донецькій обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення, поновлення на роботі</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст. 1 Закону (ч.3 ст.4 Закону)</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">09.06.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Окружному адміністративному суді м. Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="146"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/24605/15 № К/800/7774/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Демченко Людмила Дмитрівна</strong> (звільнена з посади начальника Головного управління ДФС у м.Києві)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправаним та скасування наказу щодо звільнення, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посаду заступника начальника ДПІ у Печерському районі ГУ Міндоходів у м. Києві з 17.06.2013 по 21.03.2014 (п.4 ч.2. ст.3 Закону) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">05.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">
+<p>Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="165"><strong><span style="color: #000000; font-family: Times New Roman;">№ 808/7718/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">
+<p><span style="color: #000000; font-family: Times New Roman;"><strong>Жовнер Андрій Олександрович</strong></span>(звільнений з посади начальника Управління моніторингу корупціогенних чинників Секретаріату Кабінету Міністрів України)</p>
+</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Міністр КМУ Семерак О.М.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Секретаріат КМУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним дій та зобовязання утриматись від вичиненя певних дій</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч.1 ст.3 Закону, з 02.09.2010 по 29.07.2014</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">10.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">
+<p>Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</p>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="147"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/6261/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Ігнатенко Ганна Володимирівна</strong> (звільнена з посади заступника начальника Головного управління ДФС у м. Києві)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. ДФС 2. Головне управління ДФС у м. Києві</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправними дій та бездіяльності, зобовязання вчинити дії </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посади з 24.03.2011 по 21.01.2014, передбачені п.8 ч.1 ст.3, п.4 ч.2 ст.3 Закону </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">17.05.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Окружному адміністративному суді м. Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="163"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/10995/15 №К/800/45050/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Ігнатенко Ганна Володимирівна</strong> (звільнена з посади заступника начальника Головного управління ДФС у м. Києві)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.ДФС 2.Департамент персоналу ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Головне управління ДФС у м. Києві</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконними та протиправними дій, скасування наказу про звільнення з посади, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посади з 24.03.2011 по 21.01.2014, передбачені п.8 ч.1 ст.3, п. 4 ч.2 ст.3 Закону </span></td>
+<td align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">10.06.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="178"><strong><span style="color: #000000; font-family: Times New Roman;">№ 813/1739/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Климків Ігор Зеновійович</strong> (інспектор ДПС взводу № 3 роти Державної патрульної служби відділу ДАІ з обслуговування м. Львова Головного управління МВС)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.МВС 2.Головне управління МВС України у Львівській обл. 3. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування наказів про звільнення, поновлення на роботі, стягнення середнього заробітку за час вимушеного прогулу</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Склав протокол про адміністративне правопорушення стосовно особи, яку було звільнено від адміністративної відповідальності відповідно до Законів України № 737-VII, № 743-VII (п.10 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">09.04.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Львівським окружним адміністративним судом до прийняття рішення КСУ </span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="222"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/680/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Квашук Василь Павлович </span></strong><span style="color: #000000; font-family: Times New Roman;">(звільнений з посади заступника Міністра надзвичайних ситуацій України, голови комісії з проведенення реорганізації Міністерства надзвичайних ситуацій України )</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.КМУ 2.Державна служба України з надзвичайних ситуацій 3.Міністерство надзвичайних ситуацій України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу на звільнення, поновлення на посаді, стягнення середнього заробітку за час вимушеного прогулу, зобов'язання відкликати відомості</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника Міністра надзвичайних ситуацій України з 29.05.2012 по 08.04.2015 (п.1 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">16.02.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="187"><strong><span style="color: #000000; font-family: Times New Roman;">№ 817/3278/15 </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Клячук Анатолій Афонійович</strong> (звільнений з посади першого заступника начальника Головного управління ДФС у Рівненській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. ДФС 2. Головне управління ДФС у Рівненській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу про звільнення, поновлення на посаді, стягнення середнього заробітку за час вимушеного прогулу</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника голови Державної податкової адміністрації у Рівненській обл. з 20.05.2005 по 01.02.2012 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="font-family: Times New Roman;">27.10.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="80"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/12956/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Костенко Олексій Володимирович</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування висновку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Обіймав посади в КДБ СРСР з 01.08.1990 по 07.08.1992 (п.3 ч.4 ст.3 Закону) </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">22.08.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Окружному адміністративному суді м. Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="125"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/18134/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Криворучко Віталій Вікотрович</strong> (звільнений з посади першого заступника начальника Управління СБУ у Дніпропетровській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">СБУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч. 1 ст.3 Закону, з 24.12.2009 по 10.03.2014 </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">24.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="240"><strong><span style="color: #000000; font-family: Times New Roman;">№ 823/739/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Криницька Оксана Юріївна</strong> (звільнена з посади першого заступника директора департаменту - начальника управління економіки, розвитку сільських територій та інвестицій, харчової та переробної промисловості Департаменту агропромислового розвитку Черкаської обласної державної адміністрації)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Черкаська обласна державна адміністрація</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування рішення, поновлення на службі та стягнення середнього заробітку за час вимушеного прогулу</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="font-family: Times New Roman;">Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст. 1 Закону (ч.3 ст.4 Закону); обіймала посаду голови Золотоніської районної державної адміністрації з 16.06.2010 по 10.09.2013 (п.9 ч.1 ст.3 Закону)</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">17.06.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="250"><strong><span style="color: #000000; font-family: Times New Roman;">№ 804/15119/15 № К/800/1560/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Крупський Анатолій Федорович</strong> (звільнений з посади першого заступника міського голови Дніпропетровської міської ради)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">в.о. Дніпропетровського міського голови -керуючого справами виконавчого комітету Дніпропетровської міської ради Мархасін В.Ю.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. Дніпропетровська міська рада 2. Дніпропетровська міська вибоча комісія Дніпропетровської обл. </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним розпорядження та вчинення певних дій (звільнили під час виборчого процесу)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду першого заступника голови Дніпропетровської обласної державної адміністрації з 21.01.2013 по 14.10.2014 (п.9 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.10.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Вищого адміністративного суду України відхилено касаційну скаргу Мін'юсту (справу завершено)</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="120"><strong><span style="color: #000000; font-family: Times New Roman;">№ 815/2163/15 №К/800/13594/16 №К/800/12920/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Кузьменко Олександр Петрович</strong> (звільнений з посади прокурора Приморського району м.Одеси) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.ГПУ 2.Прокуратура Одеської обл.</span></td>
+<td style="border-top: 1px solid #000000; border-right: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Мін'юст 2.Прокурор Приморського району м. Одеси</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу про звільнення, поновлення на посаді, стягнення середнього заробітку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду першого заступника прокурора Печерського району м. Києва з 01.11.2013 по 22.02.2014 (п.4 ч.2 ст.3 Закону) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">17.04.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд в Одеському апеляційному адміністративному суді </td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="177"><strong><span style="color: #000000; font-family: Times New Roman;">№ 820/2130/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Кучерина Сергій Євгенович</strong> (начальника Інституту підготовки юридичних кадрів для СБУ Національного юридичного університету імені Ярослава Мудрого )</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Голова СБУ 2. Генерал армії України Грицак В.С. 3.СБУ</span></td>
+<td style="border-top: 1px solid #000000; border-right: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">МЮУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування наказу, поновлення на посаді, стягнення середнього заробітку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади: оперуповноваженогоособливого відділу КДБ СРСР, старшого оперуповноваженого особливого відділу КДБ СРСР, заступника начальника особливого відділу КДБ СРСР з14.09.1981 по 01.03.1992 (п.4 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">22.04.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="249"><strong><span style="color: #000000; font-family: Times New Roman;">№ 820/18060/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Линник Алла Володимирівна</strong> (звільнена з посади заступника прокурора Харківської обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Генеральний прокурор України Ярема В.Г. 2.Прокурор Харківської обл. Данильченко Ю.Б. 3.Прокуратура Харківської обл. 4.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посаду заступника прокурора Харківської області з 23.12.2011 по 23.10.2014 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">13.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Харківським апеляційним адміністративним судом до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="192"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/15346/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Лубяний Андрій Станіславович </span></strong><span style="color: #000000; font-family: Times New Roman;">(звільнений з посади заступника начальника відділу розслідування злочинів, учинених дітьми, слідчий управління ГУ НП у м. Києві)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;">1. Головне управління Національної поліції України в м. Києві 2. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу про звільнення, поновлення на службі, стягнення середнього заробітку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч.1 ст.3 Закону, з 04.06.2007 по 08.05.2013<br /> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.10.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="160"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/18812/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Лупащенко Володимир Миколайович</strong> (звільнений з посади начальника управління по боротьбі з організованою злочинністю Управління МВС в Житомирській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.МВС 2.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду першого заступника начальника УМВС України в Миколаївській обл. - начальник УБОЗ з 30.04.2010 по 20.07.2011 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">02.12.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="149"><strong><span style="color: #000000; font-family: Times New Roman;">№ 813/1297/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Лучишин Іван Петрович</strong> (звільнений з посади інспектора дорожньо-патрульної служби взводу №5 роти дорожньо-патрульної служби відділу ДАІ з обслуговування м. Львов Головного управління МВС) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.МВС 2.Головне управління МВС у Львівській обл. 3.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Управління ДАІ Головного управління МВС України у Львівській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконними та скасування наказів, поновлення на посаді, стягнення середнього заробітку за час вимушеного прогулу, зобов'язання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Склав протокол про адміністративне правопорушення стосовно особи, яку було звільнено від адміністративної відповідальності відповідно до Законів України № 737-VII, № 743-VII (п.10 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">20.03.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Львівського апеляційного адміністративного суду апеляційну скаргу МВС повернуто (справу завершено)</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="183"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/13793/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Машковський Геннадій Павловична</strong> (звільнений з посади начальника Державної податкової інспекції у м.Славутич Головного управління Міністрества доходів та зборів України у Київській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.ДФС 2.Комісія з реорганізації Міндоходів 3.Головне управління ДФС у Київській обл. 4.Державна податкова інспекція у м. Славутич Головного управління ДФС у Київській обл. 5.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">в.о. Голови комісії з реогранізації Міндоходів - в.о. директора організаційно-розпорядчого департаменту ДФС Романчук Н.А.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання нечинним та скасування наказу щодо звільнення, поновленні на посаді, стягнення середнього заробітку за час вимушеного прогулу, стягнення моральної шкоди та зобов'язання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст. 1 Закону (ч.3 ст.4 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">15.07.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="334"><strong><span style="color: #000000; font-family: Times New Roman;">№ 819/3432/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Мельник Марія Василівна</strong> (звільнена з посади першого заступника начальника Головного управління ДФС у Тернопільській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Головне управління ДФС у Тернопільській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення та поновлення на роботі</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посади, передбачені п.8 ч.1 ст.3 Закону, з 22.02.2012 по 07.09.2015</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">01.12.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває процедура передання справи до Касаційного адміністративного суду у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="211"><strong><span style="color: #000000; font-family: Times New Roman;">№ 818/3740/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Миранюк Віталій Миколайович</strong> (звільнений з посади начальника митного поста «Західний» Київської міської митниці ДФС)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. ДФС 2.Київська міська митниця ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу про звільнення, поновлення на посаді, стягнення середнього заробітку за час вимушеного прогулу</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника начальника Енергетичної регіональної митниці з 06.05.2010 по 01.11.2011 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">24.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="183"><strong><span style="color: #000000; font-family: Times New Roman;">№ 820/11472/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Мірза Олександр Володимирович</strong> (звільнений з посади першого заступника начальника Дніпропетровської митниці ДФС)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.ДФС 2.Дніпропетровська митниця ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу про звільнення, поновлення на роботі, стягнення середнього заробітку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч.1 ст. 3 Закону, з 24.06.2005 по 01.07.2013</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">30.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Харківським апеляційним адміністративним судом до прийняття рішення КСУ </span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="166"><strong><span style="color: #000000; font-family: Times New Roman;">№ 804/7653/15 №К/800/48119/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Мірошніченко Олександр Дмитрович</strong> (звільнений з посади першого заступника начальника Головного управління МВС України в Дніпропетровській обл. - начальника слідчого управління)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.МВС 2.МЮУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Головне управління МВС в Дніпропетровській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення та зобов`язання вчинити дії (поновити на посаді, вилучити з Реєстру) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду першого заступника начальника Головного управління МВС в Миколаївській обл.- начальник слідчого управління з 11.2012 по 08.2014 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">22.06.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Дніпропетровським окружним адміністративним судом України до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="188"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/22700/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Демченко Л.Д.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправаним та скасування наказу, зобовязання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посаду заступника начальника Державної податкової інспекції у Печерському районі ГУ Міндоходів у м. Києві з 21.11.2013 по 22.02.2014 (п.4 ч.2 ст.3 Закону)<br /></span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">02.10.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="160"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/7458/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Невідомська Євгенія Михайлівна</strong> (звільнена з посади головного державного інспектора відділу обміну податкової інформації управління податкового співробітництва Департаменту міжнародних зв'язків ДФС)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;">ДФС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу про звільнення, поновлення на службі, стягнення середнього заробітку, стягнення моральної шкоди, зобов'язання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Невідповідність вартості майна доходам, отриманим із законих джерел (ч.8 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">25.05.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд у Окружному адміністративному суді м. Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="160"><strong><span style="color: #000000; font-family: Times New Roman;">№ 757/45613/15-ц</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Озерова Тетяна Григорівна</strong> (звільнена з посади директора Державного підприємства «Державний інститут судових економіко-правових та технічних експертних досліджень»)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Мін'юст 2.ДП «Державний інститут судових економіко-правових та технічних експертних досліджень»</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування наказу щодо звільнення, поновлення на роботі та стягнення коштів </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймала посаду директора ДП, що належало до сфери управління суб’єкта надання адміністративних послуг, з 10.04.2013 по 21.10.2015 (п.8 ч.2 ст.3 Закону) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">07.12.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд у Печерському районному суді м.Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="139"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/15453/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Осаволюк Леонід Васильович</strong> (звільнений з посади Генерального консула консульства України в Ростові-на-Дону Міністерства закордонних справ)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Міністерство закордонних справ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. СБУ 2. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним, скасування наказу щодо звільнення, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади в КДБ СРСР з 1973 по 1988 (п.3 ч.4 ст.3 Закону) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">06.10.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Постановою Київського апеляційного адміністративного суду апеляційну скаргу позивача залишено без задоволення</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="160"><strong><span style="color: #000000; font-family: Times New Roman;">№ 813/2950/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Парамонов Євген Вікторович</strong> (звільнений з посади першого заступника військового прокурора Західного регіону України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ГПУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправними і скасування наказів, поновлення на роботі</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади, передбачені п.8 ч.1 ст.3 Закону, з 01.2011 по 09.2014<br /></span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">05.09.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Львівському окружному адміністративному суді</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="159"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/11888/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Пасічник Юлія Володимирівна</strong> (провідний спеціаліст відділу розгляду звернень Управління по роботі зі зверненнями громадян Департаменту організаційного забезпечення та контролю Мін'юсту)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Державна податкова інспекція у Солом'янському районі Головного управління ДФС у м.Києві</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання недійсним висновку</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Невідповідність вартості майна доходам, отриманим із законих джерел (ч.8 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">04.08.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Ухвалою Київського апеляційного адміністративного суду повернуто апеляційну скаргу Державної податкової інспекції у Солом'янському районі ГУ ДФС у м.Києві </td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="196"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/17947/14 </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Перцов Олександр Володимирович</strong> (звільнений з посади заступника начальника Управління контррозвідувальних заходів по боротьбі з тероризмом СБУ)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">СБУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника начальника Управління СБУ в Дніпропетровській обл. з 06.09.2011 по 20.12.2012 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">21.11.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="140"><strong><span style="color: #000000; font-family: Times New Roman;">№ 807/1576/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Печенік Юлія Олегівна</strong> (офіцер відділу прикордонного контролю штабу Чопського прикордонного загону регіонального управління Державної прикордонної служби України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman;">1.Ужгородське об'єднання Державної податкової інспекції Головного управління ДФС у Закарпатській обл. 2. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman;">Західне регіональне управління Державної прикордонної служби України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним, скасування висновку та зобов'язання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Невідповідність вартості майна доходам, отриманим із законих джерел (ч.8 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">28.10.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="224"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/25204/15 № К/800/7784/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Приходько Борис Вікторович</strong> (звільнений з посади заступника Голови Національного банку України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">НБУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення, поновлення на посаді та зобов'язання вчинити певні дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду першого заступника Голови НБУ з 17.12.2012 по 21.03.2014 (п.2 ч.1 ст.3 Закону )</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">18.11.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="171"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/4658/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Сергієнко Микола Васильович</strong> (звільнений з посади провідного спеціаліста відділу зв'язку Управління матеріального забезпечення Головного управління МВС України в Київській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Головне управління МВС України в Київській обл. 2.Головне управління Національної поліції у Київській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним дій, визнання протиправним та скасування наказу, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду електромеханіка зв'язку Управління урядового зв'язку КДБ УРСР з 08.10.1979 по 16.02.1987 (п.3 ч.4 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">29.03.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Ухвалою Касаційного адміністративного суду у складі Верховного Суду повернуто касаційну скаргу відповідача</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="164"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/16237/14 №К/800/13730/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Сіренко Анатолій Петрович</strong> (звільнений з посади начальника Департаменту Державної автомобільної інспекції України) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1. МВС 2. Головне управління МВС України у Київській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про зобов'язання МВС, ГУ МВС у Київській обл. змінити дату наказів про звільнення Сіренка А.П. </span></td>
+<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду начальника Головного управління МВС у Київській області з 22.03.2010 по 19.07.2014 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">23.10.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="223"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/13735/15 № К/800/8745/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Сіренко Анатолій Петрович</strong> (звільнений з посади начальника Департаменту Державної автомобільної інфспекції України) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">МВС</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним наказу МВС у частині звільнення Сіренка А.П.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду начальника Головного управління МВС у Київській області з 22.03.2010 по 19.07.2014 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">15.07.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="207"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/1003/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">Сутулинський Олександр Михайлович </span></strong><span style="color: #000000; font-family: Times New Roman;">(звільнений з посади директора Департаменту авіаційної безпеки Державної авіаційної служби України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Голова Державної авіаційної служби України Більчук Олександр Васильович 2.Державна авіаційна служба України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування наказу, поновлення на посаді, стягнення заробітної плати за час вимушеного прогулу</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">У період з 01.03.1982 по 22.08.1988 проходив військову службу на штатних посадах КДБ УРСР (п.3 ч.4 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">30.01.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="207"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/14781/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Сорокін Григорій Володмирович</strong> (звільнений з посади начальника відділу інформаційних технологій Управління ресурсного забезпечення та інформаційних технологій Національного агентства України з питань державної служби)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.Національне агентство України з питань державної служби 2.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Ващенко К.О.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу щодо звільнення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Невідповідність вартості майна доходам, отриманим із законих джерел (ч.8 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">28.07.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м.Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="198"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/20160/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Старчук Михайло Юрійович</strong> (звільнений з посади прокурора відділу представництва при виконанні судових рішень управління представництва в суді, захисту інтересів громадян та держави при виконанні судових рішень Головного управління представництва та організації участі у кримінальному провадженні в суді ГПУ) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ГПУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу щодо звільнення, поновлення на роботі </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника керівника прокуратури Подільського району м. Києві з 21.11.2013 по 22.02.2014 (п.3 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">24.12.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="274"><strong><span style="color: #000000; font-family: Times New Roman;">№ 815/2052/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Стоянов Микола Степанович</strong> (прокурор Одеської обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ГПУ</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Прокурор Одеської обл. Жученко О.Д.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">про визнання незаконним та скасування наказу, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посади: прокурор Миколаївської обл. з 25.02.2010 по 15.06.2011; заступник прокурора Київської обл. з 16.06.2011 по 12.02.2013 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">24.05.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Одеським окружним адміністративним судом до прийняття рішення КСУ</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="200"><strong><span style="color: #000000; font-family: Times New Roman;">№ 800/63/16 </span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Татьков Віктор Іванович</strong> (звільнений з посади судді Вищого господарського суду України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Вища рада юстиції </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасувати рішення ВРЮ </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду члена Вищої ради юстиції з 13.01.2011 по 11.04.2014 (п.6 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">25.01.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду </span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="126"><strong><span style="color: #000000; font-family: Times New Roman;">№ 812/1371/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Ткаченко Наталія Миколаївна</strong> (головний державний виконавець відділу ДВС Перевальського районного управління юстиції)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Біловодське відділення Старобільської об'єднаної податкової інспекції ГУ ДФС у Луганській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">ГТУЮ у Луганській обл.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасувати висновків </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Невідповідність вартості майна доходам, отриманим із законих джерел (ч.8 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">14.11.2016</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="157"><strong><span style="color: #000000; font-family: Times New Roman;">№ 811/4240/14</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Ткачук Сергій Іванович</strong> (звільнений з посади заступника начальника управління СБУ в Кіровоградській обл.)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;">1. СБУ 2. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="left" valign="bottom" bgcolor="#FFFFFF"><span style="font-family: Times New Roman; font-size: medium;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу про звільнення та поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника начальника Управління СБУ в Кіровоградській обл. з 19.10.2012 по 22.02.2014 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">03.12.2014</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF" height="154"><strong><span style="color: #000000; font-family: Times New Roman;">№ 820/6242/15 № К/800/4972/16</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;"><strong>Толмачов Анатолій Вікторивич</strong> (звільнений з посади заступника начальника Управління - начальник міліції громадської безпеки Управління МВС України на Південній залізниці)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">1.МВС 2.Управління МВС України на Південній залізниці м. Харків 3. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Управління Державної казначейської служби у Харківській обл. </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказів щодо звільнення, поновлення на роботі, стягнення моральної шкоди, вилучення даних з Реєстру</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника начальника УМВС України на Південній залізниці - начальника міліції громадської безпеки з 20.08.2009 по 08.05.2015 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF"><strong><span style="color: #000000; font-family: Times New Roman;">18.06.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle" bgcolor="#FFFFFF">Триває розгляд у Касаційному адміністративному суді у складі Верховного суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="228"><strong><span style="color: #000000; font-family: Times New Roman;">№ 800/186/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Самсін Ігор Леонович</strong> (звільнений з посади судді Верховного суду України)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Вища рада правосуддя</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування рішення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Був членом Вищої кваліфікаційної комісії суддів з 16.09.2010 по 11.04.2014 (п. 6 ч.1 ст. 3 Закону). Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст. 1 Закону (ч.3 ст.4 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">10.05.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Великій Палаті Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="253"><strong><span style="color: #000000; font-family: Times New Roman;">№ П/800/235/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Колесниченко Володимир Миколайович</strong> (звільнений з посади судді Вищого спеціалізованого суду з розгляду цивільних і кримінальних справ) </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Вища рада правосуддя</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Мін'юст </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування рішення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Був членом Вищої ради юстиції з 02.07.2013 по 11.04.2014 та не був звільнений за власним бажанням (п.2 ч.2 ст.3 Закону). Неподання заяви щодо застосування/незастосування заборон, передбачених ч.3 і ч.4 ст. 1 Закону (ч.3 ст.4 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">29.06.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="255"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/4815/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Божко Ольга Михайлівна</strong> (звільнена з посади старшого слідчого Канівського відділення поліції Золотонівського відділення поліції ГУ Національної поліції в Черкаській області)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1.МВС України 2.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування рішення, зобов'язання вчинити певні дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Склала клопотання про застосування запобіжного заходу у виді тримання під вартою стосовно осіби, яку було звільнено від адміністративної відповідальності відповідно до Законів України № 737-VII, № 743-VII (п.10 ч.2 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">10.04.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Рішенням Окружному адміністративному суді м. Києва задоволено позовні вимоги Позивача</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="239"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/4387/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Острянин Олександр Іванович</strong> (звільнений з посади заступник начальника УМВС України в Полтавській області - начальник міліції громадської безпеки)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1.МВС України 2.Головне управління МВС України Полтавській області 3.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"> </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання потипрвними та скасування наказів, поновлення на посаді, зобов'язання вчинити певні дії </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду заступника начальника Управління МВС України в Полтавській області - начальник міліції громадської безпеки з 14.04.2010 по 09.09.2011, з 21.09.2011 по 19.06.2012 з 27.06.2012 по 02.10.2013 (п.8 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">19.04.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Розгляд справи зупинено Київським апеляційним адміністративним судом до прийняття рішення КСУ </td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="162"><strong><span style="color: #000000; font-family: Times New Roman;">№ 820/1962/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Адамов Ігор Володимирович </strong>(звільнений з посади заступника начальника Головне управління Державної міграційної служби України в Харківській області)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1.Державна міграційна служба України 2.Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Головне управління Державної міграційної служби України в Харківській області</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про скасування наказу, поновлення на посаді з виплатою середнього заробітку за час вимушеного прогулу, зобов`язання вчинити певні дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Проходив військову службу КДБ УРСР та направлений на навчання до Вищих курсів КДБ СРСР з 01.09.1988 (п.3 ч.4 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">16.05.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Касаційного адміністративного суду у складі Верховного Суду повернуто касаційну скаргу ДМС  І інстації</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="173"><strong><span style="color: #000000; font-family: Times New Roman;">П/800/278/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Кобилянський Микола Генріхович</strong> (звільнений з посади судді Вищого адміністративного суду України </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Вища рада правосуддя</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Мін'юст </span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання незаконним та скасування рішення</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду члена Вищої ради юстиції з 21.09.2010 по 01.04.2014 (п. 6 ч. 1 ст.3 Закону) <br /></span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">11.07.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="173"><strong><span style="color: #000000; font-family: Times New Roman;">№  815/1745/15                  К/800/16585/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Сінгаєвський Ігор Петрович        </strong>(звільнений з посади начальника Головного управління Державної фіскальної служби  в Одеській області)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">
+<p><span style="color: #000000; font-family: Times New Roman;">1. Державна фіскальна служба  України</span></p>
+<p><span style="color: #000000; font-family: Times New Roman;"> 2. Мін`юст</span></p>
+</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про скасування висновків перевірки, наказу про звільнення та поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Обіймав посаду начальника Головного управління Міндоходів у Волинській області з 04.06.2013 по 16.06.2014  та не був звільнений за власним бажанням (п.4 ч.2 ст. 3 Закону )</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">24.03.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle">Триває розгляд у Касаційному адміністративному суді у складі Верховного Суду</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="173"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/2568/15</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>Гладчук Валентин Петрович</strong> (звільнений з посади інспектора сектору автомобільно-технічної інспекції відділу Державної автомобільної інспекції з обслуговування Дарницького району, підпорядкованого Головному управлінню)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1. МВС України 2. Головне управління МВС в м. Києві</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1. Професійна спілка атестованих працівників органів внутрішніх справ 2. Мін'юст</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправними та скасування наказів, поновлення на посаді</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Склав протокол про адміністративне правопорушення стосовно особи (п.10. ч.2 ст. 3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">19.02.2015</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Окружному адміністративному суді м. Києва</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle" height="173"><strong><span style="color: #000000; font-family: Times New Roman;">№ 826/16344/17</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">Міністерство юстиції України</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Генеральна прокуратура України</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Яковенко А.І.</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання бездіяльності  протиправною та зобовязання вчинити дії</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Яковенко А.І. обіймав посаду заступника начальника Головного слідчого управління Служби безпеки України у період з 30.09.2010 по 30.01.2013 (п.7 ч.1 ст.3 Закону)</span></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><strong><span style="color: #000000; font-family: Times New Roman;">14.12.2017</span></strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Київського апеляційного адміністративного суду задовлено апеляційну скаргу Мін'юсту, справу повернуто для продовження розгляду до суду першої інстанції</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>№ П/800/414/17,  П/9901/77/18   </strong>   </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><b>Міністерство юстиції України</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Вища рада правосуддя</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про скасування рішення ВРП та ухвалення нового рішення</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">п.13 ч.2 ст.3 Закону</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>23.11.2017</strong></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Ухвалою Великої Палати Верховного суду апеляційна скарга Мін'юсту залишена без задоволення (справу завершено)</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>№ 826/2626/18   </strong>   </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><b>Шевченко Сергій Анатолійович ( звільнений з посади начальника Головного упраління Держпродспромживслужба у Херхонській області)</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1. Державна служба України з питань безпечності харчових продуктів та захисту споживачів<br/>2. Мін'юст</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання ввисновку незаконним, скасування та заборони вчиняти дії</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>21.02.2018</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Окружному адміністративному суді       м. Києва</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>№ 807/171/18   </strong>   </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><b>Міністерство юстиції України</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1. Закарпатська обласна державна адміністрація <br/>2. Голова Закарпатської обласної державної адміністрації</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> Мікулін Віктор Петрович</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання бездіяльності  протиправною та зобовязання вчинити дії</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Мікулін В.П. обіймав посаду член Вищої кваліфікаційної комісії суддів України з 16.03.2011 по 22.02.2014 <b>(п. 6 ч. 1, п. 2 ч. 2 ст. 3 Закону )</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">29.03.2018</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Закарпатському окружному адміністративному суді</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>№ 822/256/16   </strong>   </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><b>Паньков Олег Михайлович<br/>(звільнений з посади керівника Державної Міграційної служби Хмельницької області)</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Державна міграційна служба України</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> Мін'юст</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визання протиправним та скасування наказу</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">З 12.11.1990 прийнятий на штатну посаду КДБ <b>(п.3 ч.4 ст.3 Закону)</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">29.02.2016</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Триває розгляд в Вінницькому апеляційному адміністративному суді</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><strong>№ 826/1362/17   </strong>   </td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;"><b>Ляденко Ірина Григорівна <br/> (заступник начальника відділу митної вартості та адміністрування митних платежів управління адміністрування митних платежів Київської митниці ДФС)</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">1.Київська митниця Державної фіскальної служюи України<br/> 2.Мін'юст</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"> Державної фіскальної служби України</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Про визнання протиправним та скасування наказу, поновлення на роботі, стягнення суми середнього заробітку за час вимушеного прогулу</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Обіймала посади заступника керівника
+центрального органу виконавчої влади, що забезпечує формування та реалізує державну митну політику в області з 07.10.2010 по 25.04.2012 <b>(п. 8 ч. 1 ст. 3 Закону)</b></td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">25.01.2017</td>
+<td style="border: 1px solid #000000;" align="center" valign="middle"><span style="color: #000000; font-family: Times New Roman;">Розгляд справи зупинено Окружним адміністративним судом м. Києва до прийняття рішення КСУ</td>
+</tr>
+
+</tbody>
+</table>
+
+        </div>
+    </div>
+</div><div class="container">&copy; 2020 «Веселі Хлопці»</div>
+
+
+</body>
+</html>

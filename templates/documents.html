@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+                    <h4>Не офіційний веб-сайт</h4>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+					<li><a href='/data'>Відомості про осіб, що проходять перевірку</a></li>
+					<li class="active"><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+                                    </div><div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Нормативні документи</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+      
+       <p><div class="panel-body">
+            <ul>
+                <li><a target="_blank" href="http://zakon4.rada.gov.ua/laws/show/1682-18">Закон України "Про очищення влади"</a></li>
+                <li><a target="_blank" href="http://zakon3.rada.gov.ua/laws/show/z1280-14">Наказ Міністерства юстиції України від 16 жовтня 2014 року № 1704/5 «Про затвердження положення про Єдиний державний реєстр осіб, щодо яких застосовано положення Закону України «Про очищення влади»</a></li>
+                <li><a target="_blank" href="http://zakon4.rada.gov.ua/laws/show/1025-2014-%D1%80">Розпорядження Кабінету Міністрів України від 16.10.2014 №1025-р "Про затвердження плану проведення перевірок відповідно до Закону України "Про очищення влади""</a></li>
+                <li><a target="_blank" href="http://zakon3.rada.gov.ua/laws/show/563-2014-%D0%BF">Постанова Кабінету Міністрів України від 16.10.2014 №563 "Деякі питання реалізації Закону України "Про очищення влади""</a></li>
+                <li><a target="_blank" href="http://zakon3.rada.gov.ua/laws/show/v2427323-14">Наказ Міністерства юстиції України від 10 листопада 2014 року № 2427/к «Про початок проведення в апараті Міністерства юстиції України перевірки, передбаченої Законом України «Про очищення влади»</a></li>
+                <li><a target="_blank" href="http://zakon3.rada.gov.ua/laws/show/v2428323-14">Наказ Міністерства юстиції України від 10 листопада 2014 року № 2428/к «Про початок проведення в територіальних органах юстиції перевірки, передбаченої Законом України «Про очищення влади»</a></li>
+                <li><a target="_blank" href="/images/uploads/75599.PDF">Наказ Головного теріторіального управління юстиції у Донецькій області Міністерства юстиції України від 08 липня 2015 року № 801/4 «Про початок проведення у Краснолиманському міському управлінні юстиції Донецької області перевірки, передбаченої Законом України «Про очищення влади»</a></li>
+                <li><a target="_blank" href="/images/uploads/1e39d.PDF">Наказ Головного теріторіального управління юстиції у Донецькій області Міністерства юстиції України від 08 липня 2015 року № 802/4 «Про початок проведення у Дружківському міському управлінні юстиції Донецької області перевірки, передбаченої Законом України «Про очищення влади»</a></li>
+<li><a href="http://old.minjust.gov.ua/news/47513">НАКАЗ. Про початок проведення перевірки, передбаченої Законом України «Про очищення влади» керівників державних підприємств, що належать до сфери управління Міністерства юстиції України</a></li>
+<li><a href="http://old.minjust.gov.ua/news/47532">НАКАЗ. Про внесення змін до наказу Міністерства юстиції України від 30.07.2015 № 2338/к «Про початок проведення перевірки</a></li>
+<li><a href="/images/uploads/18117.pdf">Наказ від 21.08.2015 №951/4 про початок проведення перевірки, передбаченої Законом у Макіївському міському управлінні юстиції Донецької області</a></li>
+<li><a href="/images/uploads/a1b8f.pdf">Наказ від 21.08.2015 №950/4 про початок проведення перевірки, передбаченої Законом у Горлівському міському управлінні юстиції Донецької області</a></li>
+<li><a href="/images/uploads/6174e.pdf">Наказ від 21.08.2015 №949/4 про початок проведення перевірки, передбаченої Законом у Харцизькому міському управлінні юстиції Донецької області</a></li>
+<li><a href="/images/uploads/8375d.pdf">Наказ від 21.08.2015 №948/4 про початок проведення перевірки, передбаченої Законом у районних управліннях юстиції у місті Донецьку</a></li>
+
+<li><a href="/images/uploads/170ae.docx">Наказ Міністерства юстиції України від 09 листопада   2015 року № 3808/к «Про внесення змін до наказу Міністерства юстиції України від 10 листопада 2014 року № 2427/к</a></li>
+
+<li><a href="/files/4239c.docx">Наказ Міністерства юстиції України від 19 червня   2017 року № 1967/5 «Про внесення змін до Положення про Громадську раду з питань люстрації при Міністерстві юстиції України»</a></li>
+
+<li><a href="/files/ef791.pdf">Наказ Міністерства юстиції України від 31 січня 2018 року № 324/к «Про внесення змін до наказу Міністерства юстиції України від 10.11.2014 № 2427/к»</a></li>
+
+
+                
+            </ul>
+        </div></p>
+        </div>
+    </div>
+</div><div class="container">&copy; 2020 «Веселі Хлопці»</div>
+
+
+
+</body>
+</html>

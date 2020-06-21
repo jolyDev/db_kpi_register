@@ -1,0 +1,670 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+                    <h4>Не офіційний веб-сайт</h4>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+					<li class="active"><a href='/data'>Відомості про осіб, що проходять перевірку</a></li>
+					<li><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+                                    </div><div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Відомості про осіб, що проходять перевірку</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+      
+       <p><table class="table"><tbody><tr><td width="300"><b>Орган перевірки</b></td>
+            <td> </td></tr>
+        <tr><td>Апарат ВРУ</td>
+            <td><a href="http://iportal.rada.gov.ua/documents/ochischenia_vlady/98907.html">http://iportal.rada.gov.ua/documents/ochischenia_vlady/98907.html</td></tr>
+        <tr><td>Секретаріат КМУ</td>
+            <td><a href="http://www.kmu.gov.ua/control/uk/publish/article?art_id=247766068&cat_id=244276429">http://www.kmu.gov.ua/control/uk/publish/article?art_id=247766068&cat_id=244276429</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>         
+		<tr><td><b>Національний банк України</b></td>
+            <td><a href="http://www.bank.gov.ua/control/uk/publish/category?cat_id=11879628">http://www.bank.gov.ua/control/uk/publish/category?cat_id=11879628</a></td></tr></tr>
+		<tr><td> </td>
+            <td> </td></tr>           
+        <tr><td><b>Міністерства:</b></td>
+            <td></td></tr>
+        <tr><td>Міністерство закордонних справ України</td>
+            <td><a href="http://mfa.gov.ua/ua/public-info/govt-lustration">http://mfa.gov.ua/ua/public-info/govt-lustration</a></td></tr>
+        <tr><td>Міністерство освіти і науки України</td>
+            <td><a href="http://www.mon.gov.ua/ua/activity/585/1415885047/">http://www.mon.gov.ua/ua/activity/585/1415885047/</a></td></tr>
+        <tr><td>Міністерство охорони здоров’я України</td>
+            <td><a href="http://www.moz.gov.ua/ua/portal/mtcp_check/">http://www.moz.gov.ua/ua/portal/mtcp_check/</a></td></tr>        
+        <tr><td>Міністерство регіонального розвитку, будівництва та житлово-комунального господарства України</td>
+            <td><a href="http://www.minregion.gov.ua/kadry/realizaciya-zakonu-ukrayini-pro-ochischennya-vladi--534729/prohodzhennya-perevirki/informaciya-pro-perevirku-osib-yaki-pretenduyut-na-zaynyattya-posad-v-aparati-minregionu-schodo-zastosuvannya-zaboron-peredbache-129092/">http://www.minregion.gov.ua/kadry/realizaciya-zakonu-ukrayini-pro-ochischennya-vladi—534729/prohodzhennya-perevirki/informaciya-pro-perevirku-osib-yaki-pretenduyut-na-zaynyattya-posad-v-aparati-minregionu-schodo-zastosuvannya-zaboron-peredbache-129092/</a></td></tr>
+        <tr><td>Міністерство юстиції України</td>
+            <td><a href="http://lustration.minjust.gov.ua/main/checking">http://lustration.minjust.gov.ua/main/checking</a></td></tr>
+		<tr><td>Міністерство соціальної політики України</td>
+            <td><a href="http://www.mlsp.gov.ua/labour/control/uk/publish/article?art_id=169411&cat_id=169230">http://www.mlsp.gov.ua/labour/control/uk/publish/article?art_id=169411&cat_id=169230</a></td></tr>
+		<tr><td>Міністерство освіти і науки України</td>
+            <td><a href="http://www.mon.gov.ua/activity/ochishhennya-vladi.html">http://www.mon.gov.ua/activity/ochishhennya-vladi.html</a></td></tr>
+           <tr><td> </td>
+            <td> </td></tr> 
+   <tr><td><b>Національна поліція України</b></td>
+<td><a href="https://www.dso.gov.ua/ljustratsija">https://www.dso.gov.ua/ljustratsija</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>МВС</b></td>
+            <td><a href="http://mvs.gov.ua/mvs/control/main/uk/publish/article/1238462">http://mvs.gov.ua/mvs/control/main/uk/publish/article/1238462</a></td></tr>
+        <tr><td>УМВС України у Вінницькій області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/vinnytsia/uk/publish/article/166433">http://mvs.gov.ua/mvs/control/vinnytsia/uk/publish/article/166433</a></td></tr>
+        <tr><td>УМВС України у Волинській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/volyn/uk/publish/article/137500">http://mvs.gov.ua/mvs/control/volyn/uk/publish/article/137500</a></td></tr>
+        <tr><td>ГУМВС України в Дніпропетровській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/dnipro/uk/publish/article/147997">http://mvs.gov.ua/mvs/control/dnipro/uk/publish/article/147997</a></td></tr>
+        <tr><td>ГУМВС України в Донецькій області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/donetsk/uk/publish/article/148471">http://mvs.gov.ua/mvs/control/donetsk/uk/publish/article/148471</a></td></tr>
+        <tr><td>УМВС України в Житомирській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/zhytomyr/uk/publish/article/149210">http://mvs.gov.ua/mvs/control/zhytomyr/uk/publish/article/149210</a></td></tr>
+        <tr><td>УМВС України в Закарпатській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/zakarpattia/uk/publish/article/137528">http://mvs.gov.ua/mvs/control/zakarpattia/uk/publish/article/137528</a></td></tr>
+        <tr><td>ГУМВС України в Запорізькій області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/zaporizhia/uk/publish/article/107569">http://mvs.gov.ua/mvs/control/zaporizhia/uk/publish/article/107569</a></td></tr>
+        <tr><td>УМВС України в Івано-Франківській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/if/uk/publish/article/141765">http://mvs.gov.ua/mvs/control/if/uk/publish/article/141765</a></td></tr>
+        <tr><td>ГУМВС України в Київській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/kyivska/uk/publish/article/134498">http://mvs.gov.ua/mvs/control/kyivska/uk/publish/article/134498</a></td></tr>
+        <tr><td>ГУМВС України в м. Києві</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/kyiv/uk/publish/article/174168">http://mvs.gov.ua/mvs/control/kyiv/uk/publish/article/174168</a></td></tr>
+        <tr><td>УМВС України в Кіровоградській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/kirovohrad/uk/publish/article/115731">http://mvs.gov.ua/mvs/control/kirovohrad/uk/publish/article/115731</a></td></tr>
+        <tr><td>ГУМВС України в Луганській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/luhansk/uk/publish/article/159189">http://mvs.gov.ua/mvs/control/luhansk/uk/publish/article/159189</a></td></tr>
+        <tr><td>ГУ Національної поліції у Львівській області</td>
+            <td><a href="http://www.lv.npu.gov.ua/uk/">http://www.lv.npu.gov.ua/uk/</a></td></tr>
+        <tr><td>УМВС України в Миколаївській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/mykolaiv/uk/publish/article/191566">http://mvs.gov.ua/mvs/control/mykolaiv/uk/publish/article/191566</a></td></tr>
+        <tr><td>ГУМВС України в Одеській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/odesa/uk/publish/article/198869">http://mvs.gov.ua/mvs/control/odesa/uk/publish/article/198869</a></td></tr>
+        <tr><td>УМВС України в Полтавській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/poltava/uk/publish/article/164200">http://mvs.gov.ua/mvs/control/poltava/uk/publish/article/164200</a></td></tr>
+        <tr><td>УМВС України в Рівненській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/rivne/uk/publish/article/123289">http://mvs.gov.ua/mvs/control/rivne/uk/publish/article/123289</a></td></tr>
+        <tr><td>УМВС України в Сумській області </td>
+            <td><a href="http://mvs.gov.ua/mvs/control/sumy/uk/publish/article/133019">http://mvs.gov.ua/mvs/control/sumy/uk/publish/article/133019</a></td></tr>
+        <tr><td>УМВС України в Тернопільській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/ternopil/uk/publish/article/121668">http://mvs.gov.ua/mvs/control/ternopil/uk/publish/article/121668</a></td></tr>
+        <tr><td>ГУМВС України в Харківській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/kharkiv/uk/publish/article/136603">http://mvs.gov.ua/mvs/control/kharkiv/uk/publish/article/136603</a></td></tr>
+        <tr><td>УМВС України в Херсонській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/kherson/uk/publish/article/110757">http://mvs.gov.ua/mvs/control/kherson/uk/publish/article/110757</a></td></tr>
+        <tr><td>УМВС України в Хмельницькій області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/khmelnytsk/uk/publish/article/102588">http://mvs.gov.ua/mvs/control/khmelnytsk/uk/publish/article/102588</a></td></tr>
+        <tr><td>УМВС України в Черкаській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/cherkasy/uk/publish/article/131205">http://mvs.gov.ua/mvs/control/cherkasy/uk/publish/article/131205</a></td></tr>
+        <tr><td>УМВС України в Чернівецькій області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/chernivtsi/uk/publish/article/126042">http://mvs.gov.ua/mvs/control/chernivtsi/uk/publish/article/126042</a></td></tr>
+        <tr><td>УМВС України в Чернігівській області</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/chernihiv/uk/publish/article/98892">http://mvs.gov.ua/mvs/control/chernihiv/uk/publish/article/98892</a></td></tr>
+        <tr><td>УМВС України на Донецькій залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/dz/uk/publish/article/101416">http://mvs.gov.ua/mvs/control/dz/uk/publish/article/101416</a></td>
+        <tr><td>УМВС України на Львівській залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/lz/uk/publish/article/116782">http://mvs.gov.ua/mvs/control/lz/uk/publish/article/116782</a></td></tr>
+        <tr><td>УМВС України на Одеській залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/oz/uk/publish/article/108360">http://mvs.gov.ua/mvs/control/oz/uk/publish/article/108360</a></td></tr>
+        <tr><td>УМВС України на Південній залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/pz/uk/publish/article/101978">http://mvs.gov.ua/mvs/control/pz/uk/publish/article/101978</a></td></tr>
+        <tr><td>УМВС України на Південно – Західній залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/pzz/uk/publish/article/88291">http://mvs.gov.ua/mvs/control/pzz/uk/publish/article/88291</a></td></tr>
+        <tr><td>УМВС України на Придніпровській залізниці</td>
+            <td><a href="http://mvs.gov.ua/mvs/control/prz/uk/publish/article/106632">http://mvs.gov.ua/mvs/control/prz/uk/publish/article/106632</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>ЦОВВ</b></td>
+            <td> </td></tr>
+        <tr><td><b>Державна казначейська служба України</b></td>
+            <td><a href="http://treasury.gov.ua/main/uk/publish/category/234945">http://treasury.gov.ua/main/uk/publish/category/234945</a></td></tr>
+        <tr><td>ГУ ДКСУ у Вінницькій області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/vin/uk/publish/article/428150">http://www.treasury.gov.ua/reg/control/vin/uk/publish/article/428150</a></td></tr>
+        <tr><td>ГУ ДКСУ у Дніпропетровській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/dnp/uk/publish/category/424715">http://www.treasury.gov.ua/reg/control/dnp/uk/publish/category/424715</a></td></tr>
+        <tr><td>ГУ ДКСУ у Донецькій області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/don/uk/publish/category/424719">http://www.treasury.gov.ua/reg/control/don/uk/publish/category/424719</a></td></tr>
+        <tr><td>ГУ ДКСУ у Закарпатській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/zak/uk/publish/category/424727">http://www.treasury.gov.ua/reg/control/zak/uk/publish/category/424727</a></td></tr>
+        <tr><td>ГУ ДКСУ у Запорізькій області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/zap/uk/publish/category/424731">http://www.treasury.gov.ua/reg/control/zap/uk/publish/category/424731</a></td></tr>
+        <tr><td>ГУ ДКСУ у Івано-Франківській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/ifr/uk/publish/category/424735">http://www.treasury.gov.ua/reg/control/ifr/uk/publish/category/424735</a></td></tr>
+        <tr><td>ГУ ДКСУ у Київській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/kyivr/uk/publish/category/424739">http://www.treasury.gov.ua/reg/control/kyivr/uk/publish/category/424739</a></td></tr>
+        <tr><td>ГУ ДКСУ у Луганській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/lug/uk/publish/article/432042">http://www.treasury.gov.ua/reg/control/lug/uk/publish/article/432042</a></td></tr>
+        <tr><td>ГУ ДКСУ у Миколаївській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/myk/uk/publish/category/424757">http://www.treasury.gov.ua/reg/control/myk/uk/publish/category/424757</a></td></tr>
+        <tr><td>ГУ ДКСУ у Одеській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/ode/uk/publish/category/424761">http://www.treasury.gov.ua/reg/control/ode/uk/publish/category/424761</a></td></tr>
+        <tr><td>ГУ ДКСУ у Полтавській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/pol/uk/publish/category/428687">http://www.treasury.gov.ua/reg/control/pol/uk/publish/category/428687</a></td></tr>
+        <tr><td>ГУ ДКСУ у Рівненській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/riv/uk/publish/category/424774">http://www.treasury.gov.ua/reg/control/riv/uk/publish/category/424774</a></td></tr>
+        <tr><td>ГУ ДКСУ у Сумській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/sum/uk/publish/category/424778">http://www.treasury.gov.ua/reg/control/sum/uk/publish/category/424778</a></td></tr>
+        <tr><td>ГУ ДКСУ у Тернопільській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/ter/uk/publish/category/424782">http://www.treasury.gov.ua/reg/control/ter/uk/publish/category/424782</a></td></tr>
+        <tr><td>ГУ ДКСУ у Харківській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/kha/uk/publish/category/424786">http://www.treasury.gov.ua/reg/control/kha/uk/publish/category/424786</a></td></tr>
+        <tr><td>ГУ ДКСУ у Херсонській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/khe/uk/publish/category/424790">http://www.treasury.gov.ua/reg/control/khe/uk/publish/category/424790</a></td></tr>
+        <tr><td>ГУ ДКСУ у Хмельницькій області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/khm/uk/publish/category/424794">http://www.treasury.gov.ua/reg/control/khm/uk/publish/category/424794</a></td></tr>
+        <tr><td>ГУ ДКСУ у Черкаській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/chk/uk/publish/category/424798">http://www.treasury.gov.ua/reg/control/chk/uk/publish/category/424798</a></td></tr>
+        <tr><td>ГУ ДКСУ у Чернівецькій області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/chv/uk/publish/category/424802">http://www.treasury.gov.ua/reg/control/chv/uk/publish/category/424802</a></td></tr>
+        <tr><td>ГУ ДКСУ у Чернігівській області</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/chg/uk/publish/article/427986">http://www.treasury.gov.ua/reg/control/chg/uk/publish/article/427986</a></td></tr>
+        <tr><td>ГУ ДКСУ у м. Києві</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/kyiv/uk/publish/category/424810">http://www.treasury.gov.ua/reg/control/kyiv/uk/publish/category/424810 </a></td></tr>
+        <tr><td>ГУ ДКСУ у АР Крим</td>
+            <td><a href="http://www.treasury.gov.ua/reg/control/cry/uk/publish/category/426238">http://www.treasury.gov.ua/reg/control/cry/uk/publish/category/426238</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Державна фіскальна служба України</b></td>
+            <td><a href="http://sfs.gov.ua/pro-sfs-ukraini/robota-z-personalom/pro-ochischennya/">http://sfs.gov.ua/pro-sfs-ukraini/robota-z-personalom/pro-ochischennya/ </a></td></tr>
+        <tr><td>Територіальні органи ДФС у Вінницькій області</td>
+            <td><a href="http://vin.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://vin.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/ </a></td></tr>
+        <tr><td>Територіальні органи ДФС у Волинській області</td>
+            <td><a href="http://vl.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://vl.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/ </a></td></tr>
+        <tr><td>Територіальні органи ДФС у Дніпропетровській області</td>
+            <td><a href="http://dp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://dp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Донецькій області</td>
+            <td><a href="http://dn.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://dn.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td>
+        <tr><td>Територіальні органи ДФС у Житомирській області</td>
+            <td><a href="http://zt.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://zt.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Закарпатській області</td>
+            <td><a href="http://zak.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://zak.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Запорізькій області</td>
+            <td><a href="http://zp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://zp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Івано-Франківській області</td>
+            <td><a href="http://if.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://if.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Київській області</td>
+            <td><a href="http://kyivobl.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://kyivobl.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/ </a></td></tr>
+        <tr><td>Територіальні органи ДФС у Кіровоградській області</td>
+            <td><a href="http://kr.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://kr.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Луганській області</td>
+            <td><a href="http://lg.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://lg.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Львівській області</td>
+            <td><a href="http://lv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://lv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Миколаївській області</td>
+            <td><a href="http://mk.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://mk.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Одеській області</td>
+            <td><a href="http://od.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://od.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Полтавській області</td>
+            <td><a href="http://poltava.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://poltava.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Рівненській області</td>
+            <td><a href="http://rv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://rv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/ </a></td></tr>
+        <tr><td>Територіальні органи ДФС у Сумській області</td>
+            <td><a href="http://sumy.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://sumy.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Тернопільській області</td>
+            <td><a href="http://tr.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://tr.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Харківській області</td>
+            <td><a href="http://kh.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://kh.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Херсонській області</td>
+            <td><a href="http://kherson.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://kherson.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Хмельницькій області</td>
+            <td><a href="http://km.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://km.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Черкаській області</td>
+            <td><a href="http://ck.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://ck.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Чернівецькій області</td>
+            <td><a href="http://cv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://cv.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у Чернігівській області</td>
+            <td><a href="http://ch.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://ch.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td>Територіальні органи ДФС у АР Крим</td>
+            <td><a href="http://crimea.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/">http://crimea.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Міжрегіональне головне управління ДФС</b></td>
+            <td></td></tr>
+        <tr><td>Центральний офіс з обслуговування великих платників</td>
+            <td><a href="http://officevp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/173750.html">http://officevp.sfs.gov.ua/dfs-u-regioni/robota-z-personalom/pro-ochischennya/173750.html</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Державна реєстраційна служба України</b></td>
+            <td><a href="http://www.drsu.gov.ua/show/13533">http://www.drsu.gov.ua/show/13533</a></td></tr>
+        <tr><td><b>Державна служба геології та надр України</b></td>
+            <td><a href="http://geo.gov.ua/main/531-derzhgeonadrami-ukrayini-rozpochato-proces-lyustracyi.html">http://geo.gov.ua/main/531-derzhgeonadrami-ukrayini-rozpochato-proces-lyustracyi.html</a></td></tr>
+        <tr><td><b>Державна служба інтелектуальної власності України</b></td>
+            <td><a href="http://sips.gov.ua/ua/vykonannia_zakkonu">http://sips.gov.ua/ua/vykonannia_zakkonu</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Державна служба статистики України</b></td>
+            <td> </td></tr>
+        <tr><td>Головне управління статистики у Вінницькій області</td>
+            <td><a href="http://www.vn.ukrstat.gov.ua/index.php/component/content/article/2324.html">http://www.vn.ukrstat.gov.ua/index.php/component/content/article/2324.html</a></td></tr>
+        <tr><td>Головне управління статистики у Дніпропетровській області</td>
+            <td><a href="http://dneprstat.gov.ua/diyalnist/ochish/index.htm">http://dneprstat.gov.ua/diyalnist/ochish/index.htm</a></td></tr>
+        <tr><td>Головне управління статистики у Запорізькій області</td>
+            <td><a href="http://www.zp.ukrstat.gov.ua/index.php?option=com_content&view=article&id=4966:2014-11-13-11-43-36&catid=71:2014-11-13-11-41-29">http://www.zp.ukrstat.gov.ua/index.php?option=com_content&view=article&id=4966:2014-11-13-11-43-36&catid=71:2014-11-13-11-41-29 </a></td></tr>
+        <tr><td>Головне управління статистики у Київській області</td>
+            <td><a href="http://oblstat.kiev.ukrstat.gov.ua/content/p.php3?c=1065&lang=1">http://oblstat.kiev.ukrstat.gov.ua/content/p.php3?c=1065&lang=1</a></td></tr>
+        <tr><td>Головне управління статистики у Полтавській області</td>
+            <td><a href="http://www.poltavastat.gov.ua/">http://www.poltavastat.gov.ua/</a></td></tr>
+        <tr><td>Головне управління статистики у Сумській області</td>
+            <td><a href="http://sumy.ukrstat.gov.ua/?menu=586">http://sumy.ukrstat.gov.ua/?menu=586</a></td></tr>
+        <tr><td>Головне управління статистики у Херсонській області</td>
+            <td><a href="http://www.ks.ukrstat.gov.ua/diyalnist-golovnogo-upravlinnya/5151-ochishchennya-vladi.html">http://www.ks.ukrstat.gov.ua/diyalnist-golovnogo-upravlinnya/5151-ochishchennya-vladi.html</a></td></tr>
+        <tr><td>Головне управління статистики у Чернівецькій області</td>
+            <td><a href="http://www.cv.ukrstat.gov.ua/">http://www.cv.ukrstat.gov.ua/</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Державна служба України з питань безпечності харчових продуктів та захисту споживачів</b></td>
+            <td><a href="http://www.nssmc.gov.ua/about/service/newstate">http://www.nssmc.gov.ua/about/service/newstate</a></td></tr>
+        <tr><td><b>Державна служба України з надзвичайних ситуацій</b></td>
+            <td><a href="http://www.mns.gov.ua/content/control.html">http://www.mns.gov.ua/content/control.html</a></td></tr>
+        <tr><td><b>Державна служба фінансового моніторингу України</b></td>
+            <td><a href="http://www.sdfm.gov.ua/articles.php?cat_id=547&lang=uk">http://www.sdfm.gov.ua/articles.php?cat_id=547&lang=uk</a></td></tr>
+        <tr><td><b>Державна служба України у справах ветеранів війни та учасників антитерористичної операції</b></td>
+            <td><a href="http://www.dsiv.gov.ua/Jobs/SitePages/default.aspx">http://www.dsiv.gov.ua/Jobs/SitePages/default.aspx</a></td></tr>
+        <tr><td><b>Державне агентство з енергоефективності та енергозбереження України</b></td>
+            <td><a href="http://www.saee.gov.ua/uk/about/ochishennya-vlady">http://www.saee.gov.ua/uk/about/ochishennya-vlady</a></td></tr>
+        <tr><td><b>Державне агентство лісових ресурсів України</b></td>
+            <td><a href="http://dklg.kmu.gov.ua/forest/control/uk/archive/docview?typeId=132834&search_param=%EE%F7%E8%F9%E5%ED%ED%FF+%E2%EB%E0%E4%E8&searchForum=1&searchDocarch=1&searchPublishing=1">http://dklg.kmu.gov.ua/forest/control/uk/archive/docview?typeId=132834&search_param=%EE%F7%E8%F9%E5%ED%ED%FF+%E2%EB%E0%E4%E8&searchForum=1&searchDocarch=1&searchPublishing=1</a></td></tr>
+<tr><td><b>Державне агенство рибного господарства України</b></td>
+            <td><a href="http://darg.gov.ua/_ogoloshennja_0_127_menu_0_1.html">http://darg.gov.ua/_ogoloshennja_0_127_menu_0_1.html</a></td></tr>
+        <tr><td><b>Державна інспекція ядерного регулювання України</b></td>
+            <td><a href="http://www.snrc.gov.ua/nuclear/uk/publish/category/259754">http://www.snrc.gov.ua/nuclear/uk/publish/category/259754</a></td></tr>
+        <tr><td><b>Пенсійний фонд України</b></td>
+            <td><a href="http://www.pfu.gov.ua/pfu/control/uk/publish/article?art_id=219649&cat_id=219648">http://www.pfu.gov.ua/pfu/control/uk/publish/article?art_id=219649&cat_id=219648</a></td></tr>
+        <tr><td><b>Антимонопольний комітет України</b></td>
+            <td><a href="http://www.amc.gov.ua/amku/control/main/uk/publish/article/107657">http://www.amc.gov.ua/amku/control/main/uk/publish/article/107657</a></td></tr>
+        <tr><td><b>Адміністрація Державної служби спеціального зв’язку та захисту інформації України</b></td>
+            <td><a href="http://www.dstszi.gov.ua/dstszi/control/uk/publish/article?art_id=117488&cat_id=117425">http://www.dstszi.gov.ua/dstszi/control/uk/publish/article?art_id=117488&cat_id=117425</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+        <tr><td><b>Національна комісія з цінних паперів та фондового ринку</b></td>
+            <td><a href="http://www.nssmc.gov.ua/about/service/newstate">http://www.nssmc.gov.ua/about/service/newstate</a></td></tr>
+		<tr><td><b>Національна комісія,що здійснює державне регулювання у сфері ринків фінансових послуг</b></td>
+            <td><a href="http://nfp.gov.ua/content/ochishchennya-vladi.html">http://nfp.gov.ua/content/ochishchennya-vladi.html</a></td></tr>		
+		<tr><td><b>Центральна виборча комісія</b></td>
+            <td><a href="http://www.cvk.gov.ua/proved_perevirky/">http://www.cvk.gov.ua/proved_perevirky/</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+
+        <tr><td><b>Судова влада</b></td>
+                <td> </td></tr>
+            <tr><td>Державна судова адміністрація</td>
+                <td><a href="http://dsa.court.gov.ua/dsa/vvzu/emp_info/">http://dsa.court.gov.ua/dsa/vvzu/emp_info/</a></td></tr>
+            <tr><td>Верховний суд України</td>
+                <td><a href="http://www.scourt.gov.ua/clients/vsu/vsu.nsf/%28documents%29/1D51F0A55F36C8EEC2257D85004859A0?OpenDocument&Highlight=0,%EE%F7%E8%F9%E5%ED%ED%FF ">http://www.scourt.gov.ua/clients/vsu/vsu.nsf/%28documents%29/1D51F0A55F36C8EEC2257D85004859A0?OpenDocument&Highlight=0,%EE%F7%E8%F9%E5%ED%ED%FF </a></td></tr>
+            <tr><td><br /> </td>
+                <td> </td></tr>
+            <tr><td><b>ВАСУ</b></td>
+                <td><a href="http://www.vasu.gov.ua/real-zu/pochatok/">http://www.vasu.gov.ua/real-zu/pochatok/</a></td></tr>
+            <tr><td>Вінницький апеляційний адміністративний суд</td>
+                <td><a href="http://vaas.gov.ua/?action=news&id_news=1929">http://vaas.gov.ua/?action=news&id_news=1929</a></td></tr>
+            <tr><td>Дніпропетровський апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.dp.court.gov.ua/sud9101/ochischennja_vlady/vlady/">http://apladm.dp.court.gov.ua/sud9101/ochischennja_vlady/vlady/</a></td></tr>
+            <tr><td>Донецький апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.dn.court.gov.ua/sud9102/news/138575/">http://apladm.dn.court.gov.ua/sud9102/news/138575/</a></td></tr>
+            <tr><td>Житомирський апеляційний адміністративний суд</td>
+                <td><a href="http://www.zaas.gov.ua/ochyshchennia-vlady.html">http://www.zaas.gov.ua/ochyshchennia-vlady.html</a></td></tr>
+            <tr><td>Київський апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.ki.court.gov.ua/sud9103/vykonannyazakonyukrainyproochushennyavladu/provedennyaperevirkysyddiv/">http://apladm.ki.court.gov.ua/sud9103/vykonannyazakonyukrainyproochushennyavladu/provedennyaperevirkysyddiv/</a></td></tr>
+            <tr><td>Львівський апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.lv.court.gov.ua/sud9104/cleaning/materialy/">http://apladm.lv.court.gov.ua/sud9104/cleaning/materialy/</a></td></tr>
+            <tr><td>Одеський апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.od.court.gov.ua/sud9105/blok2/">http://apladm.od.court.gov.ua/sud9105/blok2/</a></td></tr>
+            <tr><td>Харківський апеляційний адміністративний суд</td>
+                <td><a href="http://apladm.hr.court.gov.ua/sud9107/lustraciya/">http://apladm.hr.court.gov.ua/sud9107/lustraciya/</a></td></tr>
+            <tr><td> </td>
+                <td> </td></tr>
+        <tr><td><b>Окружні адміністративні суди</b></td>
+
+        <tr><td>Вінницький окружний адміністративний суд</td>
+            <td><a href="http://www.voas.gov.ua/informatsija-schodo-realizatsiji-zakonu-ukrajini-pro-ochischennja-vladi/">http://www.voas.gov.ua/informatsija-schodo-realizatsiji-zakonu-ukrajini-pro-ochischennja-vladi/</a></td></tr>
+        <tr><td>Волинський окружний адміністративний суд</td>
+            <td><a href="http://vloas.gov.ua/vikonannya-vimog-zakonu-ukrayini-pro-ochishchennya-vladi">http://vloas.gov.ua/vikonannya-vimog-zakonu-ukrayini-pro-ochishchennya-vladi</a></td></tr>
+        <tr><td>Дніпропетровський окружний адміністративний суд</td>
+            <td><a href=" http://adm.dp.court.gov.ua/sud0470/info_rule/">http://adm.dp.court.gov.ua/sud0470/info_rule/</a></td></tr>
+        <tr><td>Житомирський окружний адміністративний суд</td>
+            <td><a href=" http://adm.zt.court.gov.ua/sud0670/21/">http://adm.zt.court.gov.ua/sud0670/21/</a></td></tr>
+        <tr><td>Закарпатський окружний адміністративний суд</td>
+            <td><a href=" http://adm.zk.court.gov.ua/sud0770/clear/">http://adm.zk.court.gov.ua/sud0770/clear/</a></td></tr>
+        <tr><td>Запорізький окружний адміністративний суд</td>
+            <td><a href=" http://adm.zp.court.gov.ua/sud0870/lustr_info/">http://adm.zp.court.gov.ua/sud0870/lustr_info/</a></td></tr>
+        <tr><td>Івано-Франківський окружний адміністративний суд</td>
+            <td><a href=" http://adm.if.court.gov.ua/sud0970/na_vukonannya/">http://adm.if.court.gov.ua/sud0970/na_vukonannya/</a></td></tr>
+        <tr><td>Київський окружний адміністративний суд</td>
+            <td><a href="http://adm.ko.court.gov.ua/sud1070/lustr/">http://adm.ko.court.gov.ua/sud1070/lustr/</a></td></tr>
+        <tr><td>Кіровоградський окружний адміністративний суд</td>
+            <td><a href="http://adm.kr.court.gov.ua/sud1170/ochvlady/">http://adm.kr.court.gov.ua/sud1170/ochvlady/</a></td></tr>
+        <tr><td>Луганський окружний адміністративний суд</td>
+            <td><a href=" http://adm.lg.court.gov.ua/sud1270/lustrarion/">http://adm.lg.court.gov.ua/sud1270/lustrarion/</a></td></tr>
+        <tr><td>Львівський окружний адміністративний суд</td>
+            <td><a href=" http://adm.lv.court.gov.ua/sud1370/vlada/">http://adm.lv.court.gov.ua/sud1370/vlada/</a></td></tr>
+        <tr><td>Миколаївський окружний адміністративний суд</td>
+            <td><a href=" http://adm.mk.court.gov.ua/sud1470/documents5/">http://adm.mk.court.gov.ua/sud1470/documents5/</a></td></tr>
+        <tr><td>Одеський окружний адміністративний суд</td>
+            <td><a href=" http://adm.od.court.gov.ua/sud1570/menu5/jud_info/">http://adm.od.court.gov.ua/sud1570/menu5/jud_info/</a></td></tr>
+        <tr><td>Полтавський окружний адміністративний суд</td>
+            <td><a href=" http://admpl.court.gov.ua/index.php?option=com_content&view=article&id=116&Itemid=47">http://admpl.court.gov.ua/index.php?option=com_content&view=article&id=116&Itemid=47</a></td></tr>
+        <tr><td>Рівненський окружний адміністративний суд</td>
+            <td><a href="http://adm.rv.court.gov.ua/sud1770/3/">http://adm.rv.court.gov.ua/sud1770/3/</a></td></tr>
+        <tr><td>Сумський окружний адміністративний суд</td>
+            <td><a href="http://adm.su.court.gov.ua/sud1870/42/">http://adm.su.court.gov.ua/sud1870/42/</a></td></tr>
+        <tr><td>Тернопільський окружний адміністративний суд</td>
+            <td><a href="http://adm.te.court.gov.ua/sud1970/cleaning/">http://adm.te.court.gov.ua/sud1970/cleaning/</a></td></tr>
+        <tr><td>Харківський окружний адміністративний суд</td>
+            <td><a href=" http://khoas.gov.ua/page36">http://khoas.gov.ua/page36</a></td></tr>
+        <tr><td>Херсонський окружний адміністративний суд</td>
+            <td><a href=" http://adm.ks.court.gov.ua/sud2170/powerclearing/">http://adm.ks.court.gov.ua/sud2170/powerclearing/</a></td></tr>
+        <tr><td>Хмельницький окружний адміністративний суд</td>
+            <td><a href=" http://kmoas.gov.ua/vikonannya-vimog-zakonu-ukrayini-pro-ochishchennya-vladi ">http://kmoas.gov.ua/vikonannya-vimog-zakonu-ukrayini-pro-ochishchennya-vladi</a></td></tr>
+        <tr><td>Черкаський окружний адміністративний суд</td>
+            <td><a href=" http://adm.ck.court.gov.ua/sud2370/real-zu/">http://adm.ck.court.gov.ua/sud2370/real-zu/</a></td></tr>
+        <tr><td>Чернівецький окружний адміністративний суд</td>
+            <td><a href=" http://cvoas.gov.ua/informacia/">http://cvoas.gov.ua/informacia/</a></td></tr>
+        <tr><td>Чернігівський окружний адміністративний суд</td>
+            <td><a href=" http://adm.cn.court.gov.ua/sud2570/ochisheniya/">http://adm.cn.court.gov.ua/sud2570/ochisheniya/</a></td></tr>
+        <tr><td>Окружний адміністративний суд міста Києва</td>
+            <td><a href=" http://oask.gov.ua/node/416">http://oask.gov.ua/node/416</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+            <tr><td><b>ВГСУ</b></td>
+                <td><a href="http://vgsu.arbitr.gov.ua/pages/206/">http://vgsu.arbitr.gov.ua/pages/206/</a></td></tr>
+            <tr><td>Дніпропетровський апеляційний господарський суд</td>
+                <td><a href="http://dpa.arbitr.gov.ua/sud5029/139826/">http://dpa.arbitr.gov.ua/sud5029/139826/</a></td></tr>
+            <tr><td>Київський апеляційний господарський суд</td>
+                <td><a href="http://kia.arbitr.gov.ua/sud5033/11/">http://kia.arbitr.gov.ua/sud5033/11/</a></td></tr>
+            <tr><td>Львівський апеляційний господарський суд</td>
+                <td><a href="http://lva.arbitr.gov.ua/sud5036/pro_ochyschennya_vlady/">http://lva.arbitr.gov.ua/sud5036/pro_ochyschennya_vlady/</a></td></tr>
+            <tr><td>Одеський апеляційний господарський суд</td>
+                <td><a href="http://oda.arbitr.gov.ua/sud5037/ochishcennya/">http://oda.arbitr.gov.ua/sud5037/ochishcennya/</a></td></tr>
+            <tr><td> </td>
+                <td> </td></tr>
+        <tr><td><b>Місцеві господарські суди</b></td>
+
+        <tr><td>Господарський суд Дніпропетровської області</td>
+            <td><a href=" http://dp.arbitr.gov.ua/sud5005/pro/">http://dp.arbitr.gov.ua/sud5005/pro/</a></td></tr>
+        <tr><td>Господарський суд Кіровоградської області</td>
+            <td><a href=" http://kr.arbitr.gov.ua/sud5013/proochvl/">http://kr.arbitr.gov.ua/sud5013/proochvl/</a></td></tr>
+
+        <tr><td>Господарський суд Запорізької області</td>
+            <td><a href=" http://zp.arbitr.gov.ua/sud5009/lustr/">http://zp.arbitr.gov.ua/sud5009/lustr/</a></td></tr>
+
+        <tr><td>Господарський суд Київської області</td>
+            <td><a href=" http://ko.arbitr.gov.ua/sud5012/zakon/jud_info/">http://ko.arbitr.gov.ua/sud5012/zakon/jud_info/ </a></td></tr>
+        <tr><td>Господарський суд Черкаської області</td>
+            <td><a href=" http://ck.arbitr.gov.ua/sud5026/zakon/">http://ck.arbitr.gov.ua/sud5026/zakon/</a></td></tr>
+        <tr><td>Господарський суд Чернігівської області</td>
+            <td><a href=" http://cn.arbitr.gov.ua/sud5028/coruption/">http://cn.arbitr.gov.ua/sud5028/coruption/</a></td></tr>
+        <tr><td>Господарський суд міста Києва</td>
+            <td><a href=" http://ki.arbitr.gov.ua/sud5011/42/">http://ki.arbitr.gov.ua/sud5011/42/</a></td></tr>
+        <tr><td>Господарський суд Закарпатської області</td>
+            <td><a href=" http://zk.arbitr.gov.ua/sud5008/ochyschenya_vlady/">http://zk.arbitr.gov.ua/sud5008/ochyschenya_vlady/</a></td></tr>
+        <tr><td>Господарський суд Івано-Франківської області</td>
+            <td><a href=" http://if.arbitr.gov.ua/sud5010/1000/">http://if.arbitr.gov.ua/sud5010/1000/</a></td></tr>
+        <tr><td>Господарський суд Львівської області</td>
+            <td><a href=" http://lv.arbitr.gov.ua/sud5015/ochyschenya_vlady/">http://lv.arbitr.gov.ua/sud5015/ochyschenya_vlady/</a></td></tr>
+        <tr><td>Господарський суд Тернопільської області</td>
+            <td><a href=" http://te.arbitr.gov.ua/sud5022/cleaner/">http://te.arbitr.gov.ua/sud5022/cleaner/</a></td></tr>
+        <tr><td>Господарський суд Чернівецької області</td>
+            <td><a href=" http://cv.arbitr.gov.ua/sud5027/lustracia/jud_info/">http://cv.arbitr.gov.ua/sud5027/lustracia/jud_info/</a></td></tr>
+        <tr><td>Господарський суд Миколаївської області</td>
+            <td><a href=" http://mk.arbitr.gov.ua/sud5016/zakon/">http://mk.arbitr.gov.ua/sud5016/zakon/</a></td></tr>
+        <tr><td>Господарський суд Одеської області</td>
+            <td><a href=" http://od.arbitr.gov.ua/sud5017/lustracia/">http://od.arbitr.gov.ua/sud5017/lustracia/</a></td></tr>
+        <tr><td>Господарський суд Херсонської області</td>
+            <td><a href=" http://ks.arbitr.gov.ua/sud5024/9/">http://ks.arbitr.gov.ua/sud5024/9/</a></td></tr>
+        <tr><td>Господарський суд Вінницької області</td>
+            <td><a href=" http://vn.arbitr.gov.ua/sud5003/69/">http://vn.arbitr.gov.ua/sud5003/69/</a></td></tr>
+        <tr><td>Господарський суд Волинської області</td>
+            <td><a href="http://vl.arbitr.gov.ua/sud5004/info1/">http://vl.arbitr.gov.ua/sud5004/info1/</a></td></tr>
+<tr><td>Господарський суд Житомирської області</td>
+<td><a href="http://zt.arbitr.gov.ua/sud5007/271114/">http://zt.arbitr.gov.ua/sud5007/271114/</a></td></tr>
+        <tr><td>Господарський суд Рівненської області</td>
+            <td><a href=" http://rv.arbitr.gov.ua/sud5019/9/">http://rv.arbitr.gov.ua/sud5019/9/</a></td></tr>
+        <tr><td>Господарський суд Хмельницької області</td>
+            <td><a href=" http://km.arbitr.gov.ua/sud5025/1100/jud_info/">http://km.arbitr.gov.ua/sud5025/1100/jud_info/</a></td></tr>
+        <tr><td>Господарський суд Сумської області</td>
+            <td><a href=" http://su.arbitr.gov.ua/sud5021/lustration/">http://su.arbitr.gov.ua/sud5021/lustration/</a></td></tr>
+        <tr><td>Господарський суд Харківської області</td>
+            <td><a href=" http://hr.arbitr.gov.ua/sud5023/lustr/">http://hr.arbitr.gov.ua/sud5023/lustr/</a></td></tr>
+        <tr><td>Господарський суд Автономної Республіки Крим</td>
+            <td><a href=" http://ko.arbitr.gov.ua/sud5012/zakon/">http://ko.arbitr.gov.ua/sud5012/zakon/</a></td></tr>
+        <tr><td> </td>
+            <td> </td></tr>
+
+
+            <tr><td><b>ВССУ</b></td>
+                <td><a href="http://sc.gov.ua/ua/povidomlennja_pro_pochatok_provedennja_perevirki.html">http://sc.gov.ua/ua/povidomlennja_pro_pochatok_provedennja_perevirki.html</a></td></tr>
+            <tr><td>Апеляційний суд м.Києва</td>
+                <td><a href="http://www.apcourtkiev.gov.ua/apcourtkiev/uk/publish/category/145134">http://www.apcourtkiev.gov.ua/apcourtkiev/uk/publish/category/145134</a></td></tr>
+            <tr><td>Апеляційний суд Волинської області</td>
+                <td><a href="http://vla.court.gov.ua/sud0390/19/">http://vla.court.gov.ua/sud0390/19/</a></td></tr>
+            <tr><td>Апеляційний суд Дніпропетровської області</td>
+                <td><a href="http://dpa.court.gov.ua/sud0490/zahody/">http://dpa.court.gov.ua/sud0490/zahody/</a></td></tr>
+            <tr><td>Апеляційний суд Донецької області (м. Маріуполь)</td>
+                <td><a href="http://dnma.court.gov.ua/sud0591/info/">http://dnma.court.gov.ua/sud0591/info/</a></td></tr>
+            <tr><td>Апеляційний суд Житомирської області</td>
+                <td><a href="http://zta.court.gov.ua/sud0690/2222/">http://zta.court.gov.ua/sud0690/2222/</a></td></tr>
+            <tr><td>Апеляційний суд Закарпатської області</td>
+                <td><a href="http://zka.court.gov.ua/sud0790/perevirka/">http://zka.court.gov.ua/sud0790/perevirka/</a></td></tr>
+            <tr><td>Апеляційний суд Запорізької області</td>
+                <td><a href="http://zpa.court.gov.ua/sud0890/vl25256cf/">http://zpa.court.gov.ua/sud0890/vl25256cf/</a></td></tr>
+            <tr><td>Апеляційний суд Київської області</td>
+                <td><a href="http://koa.court.gov.ua/sud1090/ochish/">http://koa.court.gov.ua/sud1090/ochish/</a></td></tr>
+            <tr><td>Апеляційний суд Кіровоградської області</td>
+                <td><a href="http://kra.court.gov.ua/sud1190/200/">http://kra.court.gov.ua/sud1190/200/</a></td></tr>
+            <tr><td>Апеляційний суд Львівської області</td>
+                <td><a href="http://lva.court.gov.ua/sud1390/perevvidom/vidomosti/">http://lva.court.gov.ua/sud1390/perevvidom/vidomosti/</a></td></tr>
+            <tr><td>Апеляційний суд Миколаївської області</td>
+                <td><a href="http://mka.court.gov.ua/sud1490/vidomosti/vidomosti_pro_vikonanj/">http://mka.court.gov.ua/sud1490/vidomosti/vidomosti_pro_vikonanj/ </a></td></tr>
+            <tr><td>Апеляційний суд Одеської області</td>
+                <td><a href="http://oda.court.gov.ua/sud1590/information/">http://oda.court.gov.ua/sud1590/information/</a></td></tr>
+            <tr><td> </td>
+                <td> </td></tr>
+            <tr><td><b>СБУ</b></td>
+                <td><a href="http://www.sbu.gov.ua/sbu/control/uk/publish/article?art_id=133442&cat_id=133441">http://www.sbu.gov.ua/sbu/control/uk/publish/article?art_id=133442&cat_id=133441                    </a></td></tr>
+            <tr><td> </td>
+            <td> </td></tr>
+            <tr><td><b>ГПУ</b></td>
+                <td><a href="http://www.gp.gov.ua/ua/perevirka.html">http://www.gp.gov.ua/ua/perevirka.html</a></td></tr>
+            <tr><td>Прокуратура Київської області</td>
+                <td><a href="http://kobl.gp.gov.ua/ua/kobid.html?district=0&lustration_search=%D0%9F%D0%BE%D1%88%D1%83%D0%BA+%D0%BF%D0%BE+%D0%BF%D1%80%D1%96%D0%B7%D0%B2%D0%B8%D1%89%D1%83%E2%80%A6">http://kobl.gp.gov.ua/ua/kobid.html?district=0&
+                        lustration_search=%D0%9F%D0%BE%D1%88%D1%83%D0%BA+
+                        %D0%BF%D0%BE+%D0%BF%D1%80%D1%96%D0%B7%D0%B2%D0%B8%D1%89%D1%83…</a></td></tr>
+            <tr><td>Прокуратура міста Києва</td>
+                <td><a href="http://www.kyiv.gp.gov.ua/ua/vidkiv.html">http://www.kyiv.gp.gov.ua/ua/vidkiv.html</a></td></tr>
+            <tr><td>Прокуратура Волинської області</td>
+                <td><a href="http://vol.gp.gov.ua/ua/vidvol.html">http://vol.gp.gov.ua/ua/vidvol.html</a></td></tr>
+            <tr><td>Прокуратура Вінницької області</td>
+                <td><a href="http://vin.gp.gov.ua/ua/vidvin.html">http://vin.gp.gov.ua/ua/vidvin.html</a></td></tr>
+            <tr><td>Прокуратура Дніпропетровської області</td>
+                <td><a href="http://dnipr.gp.gov.ua/ua/viddhi.html">http://dnipr.gp.gov.ua/ua/viddhi.html</a></td></tr>
+            <tr><td>Прокуратура Житомирської області</td>
+                <td><a href="http://zhit.gp.gov.ua/ua/vidgg.html">http://zhit.gp.gov.ua/ua/vidgg.html</a></td></tr>
+            <tr><td>Прокуратура Запорізької області</td>
+                <td><a href="http://zap.gp.gov.ua/ua/vidza.html">http://zap.gp.gov.ua/ua/vidza.html</a></td></tr>
+            <tr><td>Прокуратура Закарпатської області</td>
+                <td><a href="http://zak.gp.gov.ua/ua/zakvid.html">http://zak.gp.gov.ua/ua/zakvid.html</a></td></tr>
+            <tr><td>Прокуратура Івано-Франківської області</td>
+                <td><a href="http://ifr.gp.gov.ua/ua/ifvid.html">http://ifr.gp.gov.ua/ua/ifvid.html</a></td></tr>
+            <tr><td>Прокуратура Кіровоградської області</td>
+                <td><a href="http://kir.gp.gov.ua/ua/vidkir.html">http://kir.gp.gov.ua/ua/vidkir.html</a></td></tr>
+            <tr><td>Прокуратура Львівської області</td>
+                <td><a href="http://lviv.gp.gov.ua/ua/vidlv.html">http://lviv.gp.gov.ua/ua/vidlv.html</a></td></tr>
+            <tr><td>Прокуратура Миколаївської області</td>
+                <td><a href="http://myk.gp.gov.ua/ua/nikvid.html">http://myk.gp.gov.ua/ua/nikvid.html</a></td></tr>
+            <tr><td>Прокуратура Одеської області</td>
+                <td><a href="http://od.gp.gov.ua/ua/vidod.html">http://od.gp.gov.ua/ua/vidod.html</a></td></tr>
+            <tr><td>Прокуратура Полтавської області</td>
+                <td><a href="http://pol.gp.gov.ua/ua/vidpol.html">http://pol.gp.gov.ua/ua/vidpol.html</a></td></tr>
+            <tr><td>Прокуратура Рівненської області</td>
+                <td><a href="http://pro.gov.ua/vidomosti-pro-pochatok-perevirok-zgidno-zakonu-ukrajini-pro-ochishchennya-vladi.html">http://pro.gov.ua/vidomosti-pro-pochatok-perevirok-zgidno-zakonu-ukrajini-pro-ochishchennya-vladi.html</a></td></tr>
+            <tr><td>Прокуратура Сумської області</td>
+                <td><a href="http://www.prokuratura.sumy.ua/index.php?option=com_content&view=article&id=1253&Itemid=100">http://www.prokuratura.sumy.ua/index.php?option=com_content&view=article&id=1253&Itemid=100</a></td></tr>
+            <tr><td>Прокуратура Тернопільської області</td>
+                <td><a href="http://tern.gp.gov.ua/ua/vidter.html">http://tern.gp.gov.ua/ua/vidter.html</a></td></tr>
+            <tr><td>Прокуратура Харківської області</td>
+                <td><a href="http://khar.gp.gov.ua/ua/vidxx.html">http://khar.gp.gov.ua/ua/vidxx.html</a></td></tr>
+            <tr><td>Прокуратура Херсонської області</td>
+                <td><a href="http://pho.gov.ua/vdomost-pro-pochatok-perevrok-zgdno-zakonu-ukrayin/">http://pho.gov.ua/vdomost-pro-pochatok-perevrok-zgdno-zakonu-ukrayin/</a></td></tr>
+            <tr><td>Прокуратура Хмельницької області</td>
+                <td><a href="http://khmel.gp.gov.ua/ua/xmvid.html">http://khmel.gp.gov.ua/ua/xmvid.html</a></td></tr>
+            <tr><td>Прокуратура Черкаської області</td>
+                <td><a href="http://chk.gp.gov.ua/ua/cherkvid.html">http://chk.gp.gov.ua/ua/cherkvid.html</a></td></tr>
+            <tr><td>Прокуратура Чернівецької області</td>
+                <td><a href="http://chrn.gp.gov.ua/ua/chervid.html">http://chrn.gp.gov.ua/ua/chervid.html</a></td></tr>
+            <tr><td>Прокуратура Чернігівської області</td>
+                <td><a href="http://chrg.gp.gov.ua/ua/chegvid.html">http://chrg.gp.gov.ua/ua/chegvid.html</a></td></tr>
+            <tr><td>Прокуратура АР Крим</td>
+                <td><a href="http://ark.gp.gov.ua/ua/index.html">http://ark.gp.gov.ua/ua/index.html</a></td></tr>
+            <tr><td>Військова прокуратура Центрального регіону України</td>
+                <td><a href="http://vppnr.gp.gov.ua/ua/zzzvid.html">http://vppnr.gp.gov.ua/ua/zzzvid.html</a></td></tr>
+            <tr><td>Військова прокуратура Південного регіону України</td>
+                <td><a href="http://vppdr.gp.gov.ua/ua/prvid.html">http://vppdr.gp.gov.ua/ua/prvid.html</a></td></tr>
+            <tr><td>Військова прокуратура Західного регіону України</td>
+                <td><a href="http://vpzhr.gp.gov.ua/ua/za%5Bvid.html">http://vpzhr.gp.gov.ua/ua/za%5Bvid.html</a></td></tr>
+            <tr><td> </td>
+                <td> </td></tr>
+            <tr><td><b>Обласні державні адміністрації</b></td>
+                <td> </td></tr>
+            <tr><td>Вінницька обласна державна адміністрація</td>
+                <td><a href="http://www.vin.gov.ua/web/vinoda.nsf/webgr_view/GrQZDTR?OpenDocument&count=10&RestrictToCategory=GrQZDTR">http://www.vin.gov.ua/web/vinoda.nsf/webgr_view/GrQZDTR?OpenDocument&count=10&RestrictToCategory=GrQZDTR</a></td></tr>
+            <tr><td>Волинська обласна державна адміністрація</td>
+                <td><a href="http://www.voladm.gov.ua/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=505&Itemid=376">http://www.voladm.gov.ua/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=505&Itemid=376</a></td></tr>
+            <tr><td>Дніпропетровська обласна державна адміністрація</td>
+                <td><a href="http://www.adm.dp.ua/OBLADM/obldp.nsf/document.xsp?id=EA114482B6043260C2257D8D004BB6F9">http://www.adm.dp.ua/OBLADM/obldp.nsf/document.xsp?id=EA114482B6043260C2257D8D004BB6F9</a></td></tr>
+            <tr><td>Донецька обласна державна адміністрація</td>
+                <td><a href="http://donoda.gov.ua/?lang=ua&sec=01&iface=Public&cmd=search&args=">http://donoda.gov.ua/?lang=ua&sec=01&iface=Public&cmd=search&args=</a></td></tr>
+            <tr><td>Житомирська обласна державна адміністрація</td>
+                <td><a href="http://zhitomir-region.gov.ua/article.php?chustavlada">http://zhitomir-region.gov.ua/article.php?chustavlada</a></td></tr>
+            <tr><td>Закарпатська обласна державна адміністрація</td>
+                <td><a href="http://www.carpathia.gov.ua/ua/604.htm">http://www.carpathia.gov.ua/ua/604.htm</a></td></tr>
+            <tr><td>Запорізька обласна державна адміністрація</td>
+                <td><a href="http://www.zoda.gov.ua/news/25545/realizatsiya-zakonu-ukrajini-pro-ochishennya-vladi-prohodzhennya-perevirki.html">http://www.zoda.gov.ua/news/25545/realizatsiya-zakonu-ukrajini-pro-ochishennya-vladi-prohodzhennya-perevirki.html</a></td></tr>
+            <tr><td>Івано-Франківська обласна державна адміністрація</td>
+                <td><a href="http://www.if.gov.ua/?q=page&id=25428">http://www.if.gov.ua/?q=page&id=25428</a></td></tr>
+            <tr><td>Кіровоградська обласна державна адміністрація</td>
+                <td><a href="http://www.kr-admin.gov.ua/start.php?q=Lustration/Ua/lustration.html">http://www.kr-admin.gov.ua/start.php?q=Lustration/Ua/lustration.html</a></td></tr>
+            <tr><td>Київська обласна державна адміністрація</td>
+                <td><a href="http://www.kyiv-obl.gov.ua/vidomosti_pro_stan_prohodzhennja_perevirki_peredbachenoji_zakonu_ukrajini_pro_ochischennja_vladi">http://www.kyiv-obl.gov.ua/vidomosti_pro_stan_prohodzhennja_perevirki_peredbachenoji_zakonu_ukrajini_pro_ochischennja_vladi</a></td></tr>
+            <tr><td>Львiвська обласна державна адміністрація</td>
+                <td><a href="http://www.loda.gov.ua/dokumenty_ochyschennya_vlady">http://www.loda.gov.ua/dokumenty_ochyschennya_vlady</a></td></tr>
+           <tr><td>Луганська обласна військово-цивільна адміністрація</td>
+                <td><a href="http://www.loga.gov.ua/oda/lustration/perevirki/">http://www.loga.gov.ua/oda/lustration/perevirki/</a></td></tr>
+            <tr><td>Миколаївська обласна державна адміністрація</td>
+                <td><a href="http://www.mykolayiv-oda.gov.ua/ua/lustration/">http://www.mykolayiv-oda.gov.ua/ua/lustration/</a></td></tr>
+            <tr><td>Одеська обласна державна адміністрація</td>
+                <td><a href="http://oda.odessa.gov.ua/realzacya-zakonu-ukrani-pro-ochiwennya-vladi/">http://oda.odessa.gov.ua/realzacya-zakonu-ukrani-pro-ochiwennya-vladi/</a></td></tr>
+            <tr><td>Полтавська обласна державна адміністрація</td>
+                <td><a href="http://www.adm-pl.gov.ua/page/provedennya-perevirki-dostovirnosti-vidomostey-zgidno-zakonu-ukrayini-pro-ochishchennya-vladi">http://www.adm-pl.gov.ua/page/provedennya-perevirki-dostovirnosti-vidomostey-zgidno-zakonu-ukrayini-pro-ochishchennya-vladi</a></td></tr>
+            <tr><td>Рівненська обласна державна адміністрація                </td>
+                <td><a href="http://www.rv.gov.ua/sitenew/main/ua/17355.htm">http://www.rv.gov.ua/sitenew/main/ua/17355.htm</a></td></tr>
+            <tr><td>Сумська обласна державна адміністрація                </td>
+                <td><a href="http://sm.gov.ua/ru/realizatsiia-zakonu-qpro-ochyshchennia-vladyq.html">http://sm.gov.ua/ru/realizatsiia-zakonu-qpro-ochyshchennia-vladyq.html</a></td></tr>
+            <tr><td>Тернопільська обласна державна адміністрація</td>
+                <td><a href="http://www.oda.te.gov.ua/main/ua/6164.htm">http://www.oda.te.gov.ua/main/ua/6164.htm</a></td></tr>
+            <tr><td>Чернівецька обласна державна адміністрація</td>
+                <td><a href="http://www.oda.cv.ua/page/ochishchennya-vladi">http://www.oda.cv.ua/page/ochishchennya-vladi</a></td></tr>
+<tr><td> </td>
+                <td> </td></tr>
+<tr><td><b>Районні ради</b></td>
+ <td> </td></tr>
+            <tr><td>Новгород-Сіверська районна рада Чернігівської області
+</td>
+                <td><a href="http://nvrada.cg.gov.ua/index.php?id=14518&tp=1&pg;=">http://nvrada.cg.gov.ua/index.php?id=14518&tp=1&pg;=</a></td></tr>
+<tr><td>Броварська районна рада Київської області
+</td>
+<td><a href="http://www.brovary-region.gov.ua/ocisenna-vladi">http://www.brovary-region.gov.ua/ocisenna-vladi</a></td></tr>
+        </tbody></table></p>
+        </div>
+    </div>
+</div><div class="container">&copy; 2020 «Веселі Хлопці»</div>
+
+
+</body>
+</html>

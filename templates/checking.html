@@ -1,0 +1,394 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+                    <h4>Не офіційний веб-сайт</h4>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li class ="active"><a href="/checking">Перевірки</a></li>
+                    <li><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+					<li><a href='/data'>Відомості про осіб, що проходять перевірку</a></li>
+					<li><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+<h1 class="site-name"><img src="{% static "sources/title.png" %}"> Відомості про стан проходження перевірки</h1>                            </div><div class="container">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Діючий чиновник</a></li>
+                <li><a data-toggle="tab" href="#menu1">Претендент / Призначений</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <br>
+                     <!-- тута содержимое дива -->
+                <form class="example" action="/checking/" method='POST'>
+                        {% csrf_token %}
+                        <input type="text" placeholder="Прізвище, ім`я, по-батькові" name="search" id="search">
+                        <button type="submit">Пошук</button>
+                    </form>
+                    <br>
+                    <br>
+        <br>
+
+                    {% if is_search %}
+                        <a href='/checking' type="button" class="btn btn-default">До основного списку</a>
+                        <h3 align="center">
+                                       {% if is_empty  %}
+                                       За вказаними параметрами пошуку "{{ search }}" інформація відсутня
+                                           {% else %}
+                                           Результати пошуку за запитом "{{ search }}"
+                                           {% endif %}
+                        </h3>
+
+
+                    {% endif %}
+
+                    <!-- тута таблица -->
+                    <div class="tab-content">
+                <div class="tab-pane active" id="acting"><br>
+
+                    <div id = "acting2">
+                    <table class="table" id="table-search">
+                        <thead>
+                        <tr>
+                             <th></th>
+                            <th width="15%">Регіон</th>
+                            <th width="20%">Назва органу перевірки</th>
+                            <th width="30%">ПІБ особи, щодо якої здійснюється перевірка</th>
+                            <th width="25%">Посада</th>
+                            <th width="10%"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+{% for d in checking1 %}
+    {% if not d.person_id.isPretender %}
+                        <tr class="open_item_acting">
+                            <td class="text-right"></td>
+                            <td>{{ d.person_id.region }}</td>
+                            <td>{{ d.person_id.job }}</td>
+                            <td>{{ d.person_id.name }}</td>
+                            <td>{{ d.person_id.position }}  </td>
+                            <td>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal{{ d.id }}">Повна інформація</button>
+
+                                <!-- Modal -->
+                                <div id="myModal{{ d.id }}" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                     <!-- Modal content-->
+                                        <div class="modal-content">
+
+                                            <div class="modal-body">
+
+                                            <table class="table checking">
+                <tr>
+                    <td width="30%" class="title">Регіон</td>
+                    <td class="description">{{ d.person_id.region }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Категорія органу перевірки</td>
+                    <td class="description">{{ d.person_id.category }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Назва органу перевірки</td>
+                    <td class="description">{{ d.person_id.job }} </td>
+                </tr>
+                <tr>
+                    <td class="title">Реквізити рішення про проведення перевірки</td>
+                    <td class="description">{{ d.solution }}</td>
+                </tr>
+                <tr>
+                    <td class="title">ПІБ особи, щодо якої здійснюється перевірка</td>
+                    <td class="description">{{ d.person_id.name }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Посада</td>
+                    <td class="description">{{ d.person_id.position }} </td>
+                </tr>
+                <tr>
+                    <td class="title">Дата подання Заяви про застосування заборон, визначених законом</td>
+					<td class="description">{{ d.date_accept_ban }}</td>
+
+                </tr>
+                <tr>
+                    <td class="title">Дата подання Заяви про не застосування заборон, визначених законом</td>
+                    <td class="description">{{ d.date_refuse_ban }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Висновок про результати перевірки</td>
+                    <td class="description">{{ d.resolution }}</td>
+                </tr>
+                <tr>
+                <td>Сканкопія заяви</td>
+                <td class="description">
+                    Розміщується на офіційному веб - сайті вищезазначеного органу перевірки                </td>
+            </tr>
+            <tr>
+                <td>Сканкопія декларації</td>
+                <td class="description">
+                    Розміщується на офіційному веб - сайті вищезазначеного органу перевірки                </td>
+            </tr>
+            </table>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--End Modal-->
+
+
+
+                            </td>
+                        </tr>
+
+    {% endif %}
+                    {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                </div>
+
+            </div>
+              <!-- тута его больше нет -->
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <br>
+                    <form class="example" action="/checking/" method='POST'>
+                        {% csrf_token %}
+                        <input type="text" placeholder="Прізвище, ім`я, по-батькові" name="search" id="search">
+                        <button type="submit">Пошук</button>
+                    </form>
+                    <br>
+                    <br>
+        <br>
+
+                    {% if is_search %}
+                        <a href='/checking' type="button" class="btn btn-default">До основного списку</a>
+                        <h3 align="center">
+                                       {% if is_empty  %}
+                                       За вказаними параметрами пошуку "{{ search }}" інформація відсутня
+                                           {% else %}
+                                           Результати пошуку за запитом "{{ search }}"
+                                           {% endif %}
+                        </h3>
+
+
+                    {% endif %}
+
+                    <!-- тута таблица -->
+                    <div class="tab-content">
+                <div class="tab-pane active" id="acting"><br>
+
+                    <div id = "acting2">
+                    <table class="table" id="table-search">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th width="15%">Регіон</th>
+                            <th width="20%">Назва органу перевірки</th>
+                            <th width="30%">ПІБ особи, щодо якої здійснюється перевірка</th>
+                            <th width="25%">Посада</th>
+                            <th width="10%"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                         {%  for d in checking1 %}
+                              {% if  d.person_id.isPretender %}
+                        <tr class="open_item_acting">
+                            <td class="text-right"></td>
+                            <td>{{ d.person_id.region }}</td>
+                            <td>{{ d.person_id.job }}</td>
+                            <td>{{ d.person_id.name }}</td>
+                            <td>{{ d.person_id.position }}  </td>
+                            <td>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal{{ d.id }}">Повна інформація</button>
+
+                                <!-- Modal -->
+                                <div id="myModal{{ d.id }}" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                     <!-- Modal content-->
+                                        <div class="modal-content">
+
+                                            <div class="modal-body">
+                                            <table class="table checking">
+                <tr>
+                    <td width="30%" class="title">Регіон</td>
+                    <td class="description">{{ d.person_id.region }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Категорія органу перевірки</td>
+                    <td class="description">{{ d.person_id.category }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Назва органу перевірки</td>
+                    <td class="description">{{ d.person_id.job }} </td>
+                </tr>
+                <tr>
+                    <td class="title">Реквізити рішення про проведення перевірки</td>
+                    <td class="description">{{ d.solution }}</td>
+                </tr>
+                <tr>
+                    <td class="title">ПІБ особи, щодо якої здійснюється перевірка</td>
+                    <td class="description">{{ d.person_id.name }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Посада</td>
+                    <td class="description">{{ d.person_id.position }} </td>
+                </tr>
+                <tr>
+                    <td class="title">Дата подання Заяви про застосування заборон, визначених законом</td>
+					<td class="description">{{ d.date_accept_ban }}</td>
+
+                </tr>
+                <tr>
+                    <td class="title">Дата подання Заяви про не застосування заборон, визначених законом</td>
+                    <td class="description">{{ d.date_refuse_ban }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Висновок про результати перевірки</td>
+                    <td class="description">{{ d.resolution }}</td>
+                </tr>
+                <tr>
+                <td>Сканкопія заяви</td>
+                <td class="description">
+                    Розміщується на офіційному веб - сайті вищезазначеного органу перевірки                </td>
+            </tr>
+            <tr>
+                <td>Сканкопія декларації</td>
+                <td class="description">
+                    Розміщується на офіційному веб - сайті вищезазначеного органу перевірки                </td>
+            </tr>
+            </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--End Modal-->
+
+
+                            </td>
+                        </tr>
+                             {% endif %}
+                    {%  endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                </div>
+
+            </div>
+              <!-- тута его больше нет -->
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
