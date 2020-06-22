@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li ><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li class="active"><a href="/work_material">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+
+					<li><a href='/documents'>Документи</a></li>
+					<li ><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+                                    </div>
+
+    <div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Звіти, перевірки</h1>
+    <div class="panel panel-default">
+    <!--    <div class="panel-body">
+           <ul>
+    <li><a href="/main/ukazy_prezydenta/">Укази Президента України. Звільнені від застосування заборон (люстрації)</a></li>
+    <li><a href="/main/ostatochny_vysnovok/">Остаточний висновок ВК щодо Закону України «Про очищення влади» (Закон про люстрацію) від 19.06.15  </a></li>
+    <li><a href="/main/zminy_do_zakonu_2695/">Зміни до Закону № 2695 </a></li>
+    <li><a href="/main/zvity_perevirky">Звіти, перевірки окремих органів</a></li>
+    <li><a href="/files/zvit_protyagom_2_rokiv.docx">Звіт про результати збору та узагальнення інформації щодо реалізації Закону України «Про очищення влади» протягом двох років</a></li>
+    <li><a href="/files/dodatok_do_zvitu_v_tabl.xls">Додаток у таблицях до Звіту про результати збору та узагальнення інформації щодо реалізації Закону України «Про очищення влади» протягом двох років</a></li>
+
+           </ul>
+
+
+
+
+        </div>
+    -->
+
+       <p style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zvit_dfs.docx">Звіт про результати проведення перевірки щодо виконання Державною фіскальною службою України норм Закону України «Про очищення влади» від 28.10.2015</a><br />
+Додатки №1-6: зведена інформація щодо посад, осіб та державних підприємств в органах Державної фіскальної служби України</p>
+
+<ul>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/perelik_posad_osib_dfs_1.xls">«Перелік посадових осіб центрального апарату ДФС України (голова та його заступники, керівники та заступники керівників самостійних структурних підрозділів)» станом на 28.10.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/reestr_sud_sprav_2.docx">«Реєстр судових справ, які стосуються реалізації Закону України «Про очищення влади» учасником у яких виступає ДФС/Міндоходів України (їх територіальні органи)» станом на 28.10.2015 (надано ДФСУ)</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/inf_sub_gosp_3.pdf">«Інформація щодо суб’єктів господарювання, що належать до сфери управління Державної фіскальної служби України станом на 06.10.2015» (надано ДФСУ) </a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/perel_posad_osib_4_5_6.xlsx">«Перелік посадових осіб Центрального апарату ДФС України до яких не було застосовано заборону передбачену ч. 3 ст. 1 Закону» станом на 28.10.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/perel_posad_osib_4_5_6.xlsx">«Перелік посадових осіб територіальних органів ДФС України до яких не було застосовано заборону передбачену ч. 3 ст. 1 Закону» станом на 28.10.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/perel_posad_osib_4_5_6.xlsx">«Перелік посадових осіб ДФС України інформація щодо яких потребує уточнення» станом на 28.10.2015 </a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/utoch_danyh_zvitu.docx">Уточнення даних звіту від 28.10. 2015 щодо перевірки Державної фіскальної служби України станом на 07.06.2016 щодо Моргуна О. А.</a></li>
+</ul>
+
+<p style="text-align: justify;">Узагальнення інформації щодо реалізації органами прокуратури України Закону «Про очищення влади» в частині критеріїв визначених частиною першою та пунктами 1 – 8 частини другої статті 3 Закону (за посадами та терміном перебування на них) станом на 25.03.2016<br />
+Додатки №1-3: зведена інформація щодо посад та осіб в органах прокуратури України</p>
+
+<ul>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zvit_pro_rez_zb_uzag_gener_prok.docx">ЗВІТ про результати збору та узагальнення інформації щодо стану реалізації Закону України «Про очищення влади» Генеральною прокуратурою України та органами прокуратури України</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/utoch_danyh_zvitu_perev_gener_prok.docx">Уточнення даних звіту від 01.03.2016 року щодо перевірки Генеральної прокуратури України та органів прокуратури України станом на 03.08.2016 року</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/perelik_posad_gener_prokur.xlsx">Перелік посад Генеральної прокуратури України та територіальних органів прокуратури, які відповідають ч. 1 та пп. 1 – 8 ч. 2 ст. 3 ЗУ «Про очищення влади»</a></li>
+</ul>
+
+<p style="text-align: justify;">Додатки №1-5: зведена інформація щодо стану реалізації Закону України «Про очищення влади» у м. Хмельницький станом на 11.08.2015</p>
+
+<ul>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/plan_grafik.doc">План - графік проведених заходів станом на 11.08.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zapyt_min_na_perevirku.pdf">Запит Міністерства юстиції України на перевірку посадових осіб державної адміністрації Хмельницької області щодо положень Закону України «Про очищення влади» станом на 11.08.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zapyty_min_just_ukr.zip">Запити Міністерства юстиції України (далі – МЮ) щодо з'ясування стану реалізації положень Закону України «Про очищення влади» </a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/vidpov_na_zapyt_vid_sbu.pdf">Відповідь на запит МЮ від СБУ щодо стану реалізації в управлінні СБУ у Хмельницькій області положень Закону України «Про очищення влади» станом на 11.08.2015 </a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zvedeni_dani_11_08_2015.xlsx">Зведені дані щодо стану реалізації Закону України «Про очищення влади» станом на 11.08.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/inf_pro_osib_11_08_2015.xlsx">Інформація про осіб, які обіймали посаду (посади), передбачену (передбачені) пунктом 8, 9 частини першої статті 3 Закону України «Про очищення влади», у період з 25 лютого 2010 року по 22 лютого 2014 року» станом на 11.08.2015</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/utoch_danyh_zvitu_11_08_2015.docx">Уточнення даних звіту від 11.08.2015 про збір та узагальнення інформації щодо стану реалізації Закону України «Про очищення влади» у м. Хмельницький станом на 04.05.2016 щодо Будовіцького Анатолія Миколайовича</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/zapyt_do_apu_25_04_2016.pdf">Запит МЮ від 25.04.2016 до АПУ щодо повідомлення підстав звільнення з посади керівника Управління Служби безпеки України Хмельницької області Будовіцького Анатолія Миколайовича</a></li>
+	<li style="text-align: justify;"><a href="http://lustration.minjust.gov.ua/files/vidpov_apu_29_04_2016.pdf">Відповідь АПУ від 29.04.2016 до МЮ на запит МЮ щодо повідомлення підстав звільнення з посади керівника Управління Служби безпеки України Хмельницької області Будовіцького Анатолія Миколайовича </a></li>
+	<li style="text-align: justify;"><a href="http://www.president.gov.ua/documents/1472016-19921">Указ Президента України від 14.04.2016 №147/2016 щодо звільнення з посади начальника Управління Служби безпеки України у Хмельницькій області БУДОВІЦЬКОГО Анатолія Миколайовича </a></li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="container"></div>
+
+</body>
+</html>

@@ -1,0 +1,1131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Реалізація Закону України "Про очищення влади"</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	 <link rel="stylesheet" href="{%static "index.css"%}">
+     <link rel="stylesheet" href="{%static "panel.css"%}">
+
+    <link rel="stylesheet" href="https://lustration.minjust.gov.ua/css/bootstrap.min.2.css">
+    <style type="text/css"></style>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+</head>
+
+<body>
+<div class="head-container" back>
+
+	<div class="la-anim-6">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500" viewbox="0 0 500 500">
+			<path id="la-anim-6-border" transform="translate(250, 250)"/>
+			<path id="la-anim-6-loader" transform="translate(250, 250) scale(0.9)"/>
+		</svg>
+	</div>
+     <div class="my-panel">
+         {% if request.user.is_authenticated %}
+
+        <div class="btn-group-vertical">
+        <a href="/admin_register/" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-list-alt"></span> Редагування
+        </a>
+        <a href="/logout/" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Вийти
+        </a>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn btn-success btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Увійти
+        </a>
+        {% endif %}
+        </div>
+
+    <div class="container white" style="position: relative;">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="68"><img src="{% static "sources/logo2.png" %}" style="float: left; padding: 20px 10px 10px;"></td>
+
+                <td style="padding: 10px 10px 10px 40px;">
+                    <span style="color: white; ">
+                    <h4> Міністерство юстиції України</h4>
+                    <h2>Очищення влади України </h2>
+
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="bs-component">
+        <div class="navbar navbar-inverse">
+
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li ><a href="/checking">Перевірки</a></li>
+                    <li><a href="/register">Реєстр</a></li>
+                    <li ><a href="/contact">Зворотній зв'язок</a></li>
+                    <li ><a href="/question">Актуальні питання</a></li>
+                    <li ><a href="/work_material/">Додаткові робочі матеріали</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+                    <!--links were here-->
+                    <li><a href='/address'>Адреси органів влади</a></li>
+
+					<li><a href='/documents'>Документи</a></li>
+					<li class="active"><a href='/public_council'>Громадська рада</a></li>
+					<li><a href='/court_proceedings'>Судові провадження</a></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+                                    </div><div class="container">
+    <h1 class="site-name"><img src="{% static "sources/title.png" %}">Звіт діяльності Громадської ради з питань люстрації</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+       <p><p align="center"><strong>ЗВІТ ДІЯЛЬНОСТІ ГРОМАДСЬКОЇ РАДИ З ПИТАНЬ ЛЮСТРАЦІЇ ПРИ МІНІСТЕРСТВІ ЮСТИЦІЇ УКРАЇНИ</strong></p>
+
+<p style="text-align: justify;">Громадська рада з питань люстрації при Міністерстві юстиції (далі – Громадська рада) виконує функцію дорадчого громадського органу, метою якого є здійснення громадського контролю за процесом очищення влади в Україні. Створення Громадської ради при Міністерстві юстиції передбачено нормами Закону України «Про очищення влади». Згідно закону, до Громадської ради повинні входити представники засобів масової інформації та представники громадськості.</p>
+
+<p style="text-align: justify;">24.10.2014 на спільній прес-конференції ГО «Громадський люстраційний комітет» та Міністра юстиції Павла Петренка були оголошені імена 12 журналістів, громадських активістів та правозахисників, яких обрали членами Громадської ради з поміж більш як 500 претендентів. До складу Громадської ради увійшли:</p>
+
+<ol>
+	<li style="text-align: justify;"><strong>Соболєв Єгор Вікторович</strong> – представник ГО «Громадський люстраційний комітет» (26.10.2014 в Україні відбулися позачергові парламентські вибори, в результаті яких Єгор Соболєв був обраний Народним депутатом України та перестав бути членом Громадської ради);</li>
+	<li style="text-align: justify;"><strong>Маньковський Максим Вікторович</strong> – представник ГО «Громадський люстраційний комітет»;</li>
+	<li style="text-align: justify;"><strong>Опанасенко Максим Володимирович</strong> – журналіст бюро журналістських розслідувань «Свідомо»;</li>
+	<li style="text-align: justify;"><strong>Іванов Сергій Володимирович</strong> – представник «ГО Громадський люстраційний комітет»;</li>
+	<li style="text-align: justify;"><strong>Бігус Денис Станіславович</strong> – журналіст антикорупційних розслідувань програми «Наші гроші» (телеканал ZIK);</li>
+	<li style="text-align: justify;"><strong>Бабінець Анна Володимирівна</strong> – журналіст агентства розслідувань «Слідство.інфо»;</li>
+	<li style="text-align: justify;"><strong>Седлецька Наталія Юріївна</strong> – автор та ведуча програми журналістських розслідувань «Схеми. Корупція в деталях»;</li>
+	<li style="text-align: justify;"><strong>Гнап Дмитро Володимирович</strong> – представник ГО «Громадське телебачення»;</li>
+	<li style="text-align: justify;"><strong>Волох Карл Максимович</strong> – представник ГО «Громадський люстраційний комітет»;</li>
+	<li style="text-align: justify;"><strong>Землянська Марія Валеріївна</strong> – журналіст бюро журналістських розслідувань «Свідомо»;</li>
+	<li style="text-align: justify;"><strong>Козловська Людмила Петрівна</strong> – президент Фундації «Відкритий Діалог»;</li>
+	<li style="text-align: justify;"><strong>Мусаєва-Боровик Севгіль Хайретдинівна</strong> – головний редактор інтернет-видання «Українська правда»<a href="#_ftn1" name="_ftnref1" title=""><sup><sup>[1]</sup></sup></a>.</li>
+</ol>
+
+<p style="text-align: justify;">4.11.2014 Міністр юстиції Павло Петренко підписав Наказ про утворення Громадської ради з питань люстрації. Члени Громадської ради діють на громадських засадах.</p>
+
+<p style="text-align: justify;">12.11.2014 в будівлі Міністерства юстиції України відбулося перше засідання Громадської ради. Всього відбулося 12 засідань. Також комунікація та координація дій між членами Громадської ради здійснювалася через групу в соціальній мережі Facebook.</p>
+
+<p style="text-align: justify;"><strong>1. ЖУРНАЛІСТСЬКІ РОЗСЛІДУВАННЯ</strong></p>
+
+<p style="text-align: justify;">Основним завданням Громадської ради є виявлення фактів ігнорування та порушення норм Закону України «Про очищення влади», а також максимальне висвітлення таких фактів в ЗМІ.</p>
+
+<p style="text-align: justify;">У зв’язку з цим одним з основних напрямками діяльності ГР було визначено проведення журналістських розслідувань випадків порушення люстраційного законодавства. Такі випадки широко висвітлювалися в ЗМІ, а також на сторінках в соцмережах членів Громадської ради. Завдяки проведеним розслідуванням вдалося викрити корупційні схеми по уникненню люстрації та домогтися звільнення багатьох чиновників, які були поплічниками режиму Януковича. Нижче наведено список деяких найбільш відомих розслідувань:</p>
+
+<ul>
+	<li style="text-align: justify;">«Золота свита Яреми»<a href="#_ftn2" name="_ftnref2" title=""><sup><sup>[2]</sup></sup></a> - автор Максим Опанасенко.</li>
+	<li style="text-align: justify;">«Состав преступления»<a href="#_ftn3" name="_ftnref3" title=""><sup><sup>[3]</sup></sup></a>, «Пропала грамота прокурора Валендюка»<a href="#_ftn4" name="_ftnref4" title=""><sup><sup>[4]</sup></sup></a>, «Отсрочка прокурора»<a href="#_ftn5" name="_ftnref5" title=""><sup><sup>[5]</sup></sup></a>, «Люстрация по-украински. Хроника саботажа»<a href="#_ftn6" name="_ftnref6" title=""><sup><sup>[6]</sup></sup></a> - автор Сергій Іванов.</li>
+	<li style="text-align: justify;">«Конституційний суд: а судді хто?»<a href="#_ftn7" name="_ftnref7" title=""><sup><sup>[7]</sup></sup></a> - автори Марія Землянська та Наталія Седлецька.</li>
+	<li style="text-align: justify;">Дмитро Гнап з’ясував, що люстровані прокурори Максим Занфіров та Денис Черних, які працювали за часів Януковича, намагаються поновитися на посадах<a href="#_ftn8" name="_ftnref8" title=""><sup><sup>[8]</sup></sup></a>.</li>
+	<li style="text-align: justify;">«Організоване суддівське угрупування»<a href="#_ftn9" name="_ftnref9" title=""><sup><sup>[9]</sup></sup></a>, «Революція негідності»<a href="#_ftn10" name="_ftnref10" title=""><sup><sup>[10]</sup></sup></a>, «Жерці чи ненажери?»<a href="#_ftn11" name="_ftnref11" title=""><sup><sup>[11]</sup></sup></a> – автор Дмитро Гнап.</li>
+	<li style="text-align: justify;">«Замкнуте коло»<a href="#_ftn12" name="_ftnref12" title=""><sup><sup>[12]</sup></sup></a> - автор Марія Землянська.</li>
+	<li style="text-align: justify;">«Поїздка за статусом»<a href="#_ftn13" name="_ftnref13" title=""><sup><sup>[13]</sup></sup></a> - автори Денис Бігус та Аліса Юрченко.</li>
+	<li style="text-align: justify;">«Триповерховий маєток керівника київської міліції збудований на арештованій землі»<a href="#_ftn14" name="_ftnref14" title=""><sup><sup>[14]</sup></sup></a> - автори Денис Бігус та Аліна Стрижак.</li>
+	<li style="text-align: justify;">«Відчиняйте, міліція! Що потрібно знати про обшуки у керівників Мін’юсту»<a href="#_ftn15" name="_ftnref15" title=""><sup><sup>[15]</sup></sup></a> - автор Севгіль Мусаєва-Боровик.</li>
+</ul>
+
+<p style="text-align: justify;"><strong>2. СУДОВІ ПОЗОВИ</strong></p>
+
+<p style="text-align: justify;">Громадською радою було подано декілька судових позовів щодо не звільнення чиновників із займаних посад відповідно до вимог Закону України «Про очищення влади»:</p>
+
+<ul>
+	<li style="text-align: justify;">Грудень 2014 року, позов до Вищого адміністративного суду України щодо не звільнення із посади голови Кіровоградської ОДА Сергія Кузьменка, який в період з 2010 по 2012 обіймав посаду голови Олександрійської РДА. Суд відмовив у задоволенні позову. Сергій Кузьменко наразі продовжує обіймати посаду голови Кіровоградської ОДА.</li>
+	<li style="text-align: justify;">Лютий 2015 року, позов до Окружного адміністративного суду Києва щодо не звільнення із займаних посад заступників Міністра внутрішніх справ Віталія Сакала та Василя Паскала, які підпадали під дію ЗУ «Про очищення влади». 23.04.2015, в день попереднього судового засідання по справі за позовом Громадської ради, Віталій Сакал подав у відставку.</li>
+</ul>
+
+<p style="margin-left: 36pt; text-align: justify;">27.05.2015 суд розглянув по суті справу щодо законності перебування на посаді Василя Паскала та відмовив у задоволенні позовних вимог Громадської ради. 23.11.2015 Василь Паскал був призначений першим заступником Голови Національної поліції України. Звернення активістів Громадського люстраційного комітету до голови Національної поліції з проханням не допустити призначення Василя Паскала на нову посаду було проігноровано керівництвом Національної поліції<a href="#_ftn16" name="_ftnref16" title=""><sup><sup>[16]</sup></sup></a>. 30.11.2015, в результаті тиску громадськості, Василь Паскал все-таки подав рапорт про відставку, який був задоволений.</p>
+
+<ul>
+	<li style="text-align: justify;">12 лютого 2015 року, позов до Окружного адміністративного суду Києва щодо не звільнення Генеральною прокуратурою України Миколи Франтовського з посади Прокурора Донецької області<a href="#_ftn17" name="_ftnref17" title=""><sup><sup>[17]</sup></sup></a>. 14 лютого Микола Франтовський був звільнений із займаної посади. </li>
+</ul>
+
+<p style="text-align: justify;"><strong>3. ІНФОРМАЦІЙНІ ЗАПИТИ В ДЕРЖАВНІ ОРГАНИ</strong></p>
+
+<p style="text-align: justify;">Ще однією стороною діяльності Громадської ради стало направлення інформаційних запитів в органи державної влади з метою контролю за виконанням ними люстраційного законодавства. На основі отриманих відповідей на запити Громадської ради було сформовано «Реєстр осіб, що підлягають люстрації», підготовлений ГО «Громадський люстраційний комітет». Наразі даний реєстр є найбільшим відкритим джерелом інформації про осіб, що підлягають люстрації – в ньому міститься інформація про 2557 осіб<a href="#_ftn18" name="_ftnref18" title=""><sup><sup>[18]</sup></sup></a>. </p>
+
+<p style="text-align: justify;"><strong>2014 рік</strong></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="table table-bordered" width="728">
+	<tbody>
+		<tr>
+			<td>
+			<p align="center"><strong>Орган</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість направлених запитів</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість отриманих відповідей</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість не отриманих<br />
+			відповідей</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>%<br />
+			не отриманих<br />
+			відповідей</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Відповідь була не повною або<br />
+			запитуваної інформації не отримано</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Реальної<br />
+			запитуваної інформації не отримано<br />
+			(%)</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">ГПУ</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">100</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center"> </p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">100</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Обласні прокуратури</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">46</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">40</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">6</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">13</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">18</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">52</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">ДФС</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">6</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">6</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">67</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Територіальні органи ДФС</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">50</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">44</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">6</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">13</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">22</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">56</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Державна судова адміністрація</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">100</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">100</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">КМДА</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">ОДА</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">44</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">36</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">8</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">18</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">24</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">73</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">МВС</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">25</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Територіальні органи МВС</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">56</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">43</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">11</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">19</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">16</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">48</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">СБУ</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">33</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Територіальні органи СБУ</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">43</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">36</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">7</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">16</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">24</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">72</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Суди<br />(адміністративний суд. м. Києва, Апеляційний суд м. Києва, Конституційний суд України)</p>
+
+
+			</td>
+			<td style="width:98px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">50</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">100</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center">Державна служба у справах ветеранів війни та учасників АТО</p>
+			</td>
+			<td style="width:98px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:85px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:113px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:103px;">
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px;">
+			<p align="center"> </p>
+
+			<p align="center"><strong>Всього</strong></p>
+			</td>
+			<td style="width:98px;">
+			<p align="center"><strong>262 (ще 23 запити було відкликано, а також 2 повернуто поштою), всього 287</strong></p>
+			</td>
+			<td style="width:85px;">
+			<p align="center"><strong>216</strong></p>
+			</td>
+			<td style="width:85px;">
+			<p align="center"><strong>46</strong></p>
+			</td>
+			<td style="width:94px;">
+			<p align="center"><strong>18%</strong></p>
+			</td>
+			<td style="width:113px;">
+			<p align="center"><strong>112</strong></p>
+			</td>
+			<td style="width:103px;">
+			<p align="center"><strong>60%</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: justify;">В 2014 році ГР направила до державних органів <strong>287 запити</strong> з питаннями, пов’язаними з проведенням люстрації в них. До адресатів дійшло <strong>262 запити</strong> (ще 23 було відкликано ГР, 2 повернуто поштою). На ці запити було отримано 216 відповідей. 46 запитів (18%) були проігноровані адресатами. Якісний аналіз отриманих відповідей свідчить про те, що майже половина відповідей (112) були неповними або зовсім не містили відповіді на запитувану інформацію. <strong>Загалом, рівень неотримання відповідей на запити дорівнює 60%.</strong></p>
+
+<p style="text-align: justify;">Лідерами по ігноруванню запитів ГР є ГПУ (не отримано жодної відповіді), ДСА (не отримано жодної відповіді) та суди (в половині випадків відповіді не були отримані зовсім, ще в половині – у відповіді не було надано запитуваної інформації). Найкращі показники по наданню відповідей на запити мають КМДА (1 запит – 1 повна відповідь) та Державна служба у справах ветеранів війни та учасників АТО (1 запит – 1 повна відповідь).</p>
+
+<p style="text-align: justify;"><strong>2015 рік</strong></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="table table-bordered" width="728">
+	<tbody>
+		<tr>
+			<td>
+			<p align="center"><strong>Орган</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість направлених запитів </strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість отриманих відповідей </strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Кількість не отриманих запитів </strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>%<br />
+			не отриманих відповідей</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Відповідь була не повною або<br />
+			запитуваної інформації не отримано</strong></p>
+			</td>
+			<td>
+			<p align="center"><strong>Реальної<br />
+			запитуваної інформації не отримано (%)</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p align="center"> </p>
+
+			<p>Міністерства, державні служби та державні агентства (центральні органи виконавчої влади)</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">129</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">128</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0,8</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">1</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">1,6</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p> </p>
+
+			<p>Адміністрація Президента України</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">5</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">5</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p> </p>
+
+			<p>Державна судова адміністрація, Вища рада юстиції та Вища кваліфікаційна комісія суддів України</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">7</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">7</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">1</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">14</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p> </p>
+
+			<p>Верховна рада України</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Генеральна прокуратура України</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">10</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">7</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">30</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">1</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">40</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Державна фіскальна служба України та територіальні органи ДФС</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">20</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">20</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Міністерство внутрішніх справ України та територіальні органи МВС</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">15</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">13</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">13</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">13</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Обласні державні адміністрації</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">1</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Органи прокуратури</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">24</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">20</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">16</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">18</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">92</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>СБУ</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">2</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p> </p>
+
+			<p>Суди (КСУ, ВАСУ, ВСУ та ін.)</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">21</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">18</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">3</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">14</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">14</p>
+
+			<p align="center"> </p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:81px;">
+			<p>Громадянам відповіді</p>
+			</td>
+			<td style="width:142px;height:81px;">
+			<p align="center">4</p>
+			</td>
+			<td style="width:83px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:85px;height:81px;">
+			<p align="center">0</p>
+			</td>
+			<td style="width:94px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:97px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+			<td style="width:95px;height:81px;">
+			<p align="center"> </p>
+
+			<p align="center"> </p>
+
+			<p align="center">0</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:132px;height:57px;">
+			<p><strong>Всього:</strong></p>
+			</td>
+			<td style="width:142px;height:57px;">
+			<p align="center"><strong>240</strong></p>
+
+			<p align="center"><strong>(з них  234 - запити)</strong></p>
+			</td>
+			<td style="width:83px;height:57px;">
+			<p align="center"><strong>221</strong></p>
+			</td>
+			<td style="width:85px;height:57px;">
+			<p align="center"><strong>13</strong></p>
+			</td>
+			<td style="width:94px;height:57px;">
+			<p> </p>
+
+			<p align="center"><strong>0,6 %</strong></p>
+			</td>
+			<td style="width:97px;height:57px;">
+			<p> </p>
+
+			<p align="center"><strong>21</strong></p>
+			</td>
+			<td style="width:95px;height:57px;">
+			<p align="center"> </p>
+
+			<p><strong>15 %</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: justify;"><a name="h.gjdgxs"></a>В 2015 році ГР направила до державних органів <strong>234 запити</strong> з питаннями, пов’язаними з проведенням люстрації в них. Також ГР надала <strong>6 відповідей</strong> на запити та звернення. До адресатів дійшли всі <strong>234 запитів</strong>. На ці запити було отримано 221 відповідь. 13 запитів (0,6%) були проігноровані адресатами. Якісний аналіз отриманих відповідей свідчить про те, що 21 випадках відповідь була неповною або зовсім не містила запитуваної інформації. <strong>Загалом, рівень неотримання відповідей на запити дорівнює 15%.</strong></p>
+
+<p style="text-align: justify;">Порівняно з 2014 роком було надіслано менше запитів – 234 проти 262 у 2015. При цьому варто відмітити, що у 2014 році ГР почала працювати лише в середині листопада. Таким чином активність ГР у 2014 році можна оцінювати у 175 запитів/місяць<a href="#_ftn19" name="_ftnref19" title=""><sup><sup>[19]</sup></sup></a>. <strong>За підсумками 2015 року активність дорівнювала 20 запитів/місяць.</strong></p>
+
+<p style="text-align: justify;">Водночас варто відмітити значне покращення в рівні отримання повних відповідей на надіслані запити. В 2015 році цей показник склав  85%, в той час як у 2014 році – лише 40%.</p>
+
+<p style="text-align: justify;">262/1,5 = 175</p>
+
+<p style="text-align: justify;">Лідерами за ігноруванням запитів ГР продовжують залишатися органи прокуратури: регіональні органи прокуратури (92% часткових або не повних відповідей), ГПУ (40% часткових або не повних відповідей). Традиційно низький рівень відповідей демонструють суди та судова адміністрація (по 14%).</p>
+
+<p style="text-align: justify;"><strong>ВИСНОВКИ</strong></p>
+
+<p style="text-align: justify;">Завдяки діяльності Громадської ради з питань люстрації вдалося досягти широкого розголосу фактів порушення люстраційного законодавства та досягти звільнення низки високопосадовців, що намагалися уникнути люстрації.</p>
+
+<p style="text-align: justify;">Так як Законом України «Про очищення вдали» не було передбачено створення спеціального органу, який би виконував контролюючі функції, такі зобов’язання й узяла на себе Громадська рада з питань люстрації.</p>
+
+<p style="text-align: justify;">Доводиться констатувати, що через обмеженість людських ресурсів і повноважень, а також роботу на громадських засадах, Громадській раді не вдалося охопити весь об’єм порушень та протистояти масштабному саботуванню процесу люстрації зі сторони державних органів. Водночас було продемонстровано, що публічне висвітлення фактів невиконання люстраційного законодавства є ефективним методом відновлення законності.</p>
+
+<p style="text-align: justify;">Підтвердженням цьому є звільнення 42 чиновників із списку топ-50 «недолюстрованих»<a href="#_ftn20" name="_ftnref20" title=""><sup><sup>[20]</sup></sup></a>. Цього вдалося досягти завдяки проведеній інформаційній кампанії з вимогою їх звільнення. Всього з моменту вступу в дію Закону України «Про очищення влади» було люстровано 878 осіб. Їм заборонено обіймати державні посади терміном від 5 до 10 років. Люстраційну перевірку пройшли 135 281 чиновників<a href="#_ftn21" name="_ftnref21" title=""><sup><sup>[21]</sup></sup></a>. </p>
+
+<div>
+<hr align="left" size="1" width="33%" />
+
+<div id="ftn2">
+<p><a href="#_ftnref2" name="_ftn2" title=""><sup><sup>[2]</sup></sup></a> <a href="http://www.hromadske.tv/politics/zolota-svita-yaremi/">http://www.hromadske.tv/politics/zolota-svita-yaremi/</a></p>
+</div>
+
+<div id="ftn3">
+<p><a href="#_ftnref3" name="_ftn3" title=""><sup><sup>[3]</sup></sup></a> <a href="http://blogs.pravda.com.ua/authors/ivanov/5511b44b09f2d/view_print/">http://blogs.pravda.com.ua/authors/ivanov/5511b44b09f2d/view_print/</a></p>
+</div>
+
+<div id="ftn4">
+<p><a href="#_ftnref4" name="_ftn4" title=""><sup><sup>[4]</sup></sup></a> <a href="http://blogs.pravda.com.ua/authors/ivanov/554122aa060fa/">http://blogs.pravda.com.ua/authors/ivanov/554122aa060fa/</a></p>
+</div>
+
+<div id="ftn5">
+<p><a href="#_ftnref5" name="_ftn5" title=""><sup><sup>[5]</sup></sup></a> <a href="http://blogs.pravda.com.ua/authors/ivanov/55671d11a520e/">http://blogs.pravda.com.ua/authors/ivanov/55671d11a520e/</a></p>
+</div>
+
+<div id="ftn6">
+<p><a href="#_ftnref6" name="_ftn6" title=""><sup><sup>[6]</sup></sup></a> <a href="http://www.pravda.com.ua/rus/articles/2015/04/15/7064826/?attempt=1?attempt=2">http://www.pravda.com.ua/rus/articles/2015/04/15/7064826/?attempt=1?attempt=2</a></p>
+</div>
+
+<div id="ftn7">
+<p><a href="#_ftnref7" name="_ftn7" title=""><sup><sup>[7]</sup></sup></a> <a href="https://www.youtube.com/watch?v=j2JRjx4u-MY">https://www.youtube.com/watch?v=j2JRjx4u-MY</a></p>
+</div>
+
+<div id="ftn8">
+<p><a href="#_ftnref8" name="_ftn8" title=""><sup><sup>[8]</sup></sup></a> <a href="https://www.facebook.com/photo.php?fbid=750860084997161&set=a.113496272066882.20676.100002195301194&type=1&theater">https://www.facebook.com/photo.php?fbid=750860084997161&set=a.113496272066882.20676.100002195301194&type=1&theater</a></p>
+</div>
+
+<div id="ftn9">
+<p><a href="#_ftnref9" name="_ftn9" title=""><sup><sup>[9]</sup></sup></a> <a href="http://www.hromadske.tv/politics/organizovane-suddivske-ugrupovannya/">http://www.hromadske.tv/politics/organizovane-suddivske-ugrupovannya/</a></p>
+</div>
+
+<div id="ftn10">
+<p><a href="#_ftnref10" name="_ftn10" title=""><sup><sup>[10]</sup></sup></a> <a href="https://www.youtube.com/watch?v=Lga3HASX1Ow">https://www.youtube.com/watch?v=Lga3HASX1Ow</a></p>
+</div>
+
+<div id="ftn11">
+<p><a href="#_ftnref11" name="_ftn11" title=""><sup><sup>[11]</sup></sup></a> <a href="https://www.youtube.com/watch?v=SPGsX-U8gpg">https://www.youtube.com/watch?v=SPGsX-U8gpg</a></p>
+</div>
+
+<div id="ftn12">
+<p><a href="#_ftnref12" name="_ftn12" title=""><sup><sup>[12]</sup></sup></a> <a href="https://www.youtube.com/watch?v=r3bZBvdiYAw">https://www.youtube.com/watch?v=r3bZBvdiYAw</a></p>
+</div>
+
+<div id="ftn13">
+<p><a href="#_ftnref13" name="_ftn13" title=""><sup><sup>[13]</sup></sup></a> <a href="https://www.youtube.com/watch?v=tYo5oY-GObA">https://www.youtube.com/watch?v=tYo5oY-GObA</a></p>
+</div>
+
+<div id="ftn14">
+<p><a href="#_ftnref14" name="_ftn14" title=""><sup><sup>[14]</sup></sup></a> <a href="https://www.youtube.com/watch?v=SWXZunJiwlc">https://www.youtube.com/watch?v=SWXZunJiwlc</a></p>
+</div>
+
+<div id="ftn15">
+<p><a href="#_ftnref15" name="_ftn15" title=""><sup><sup>[15]</sup></sup></a> <a href="http://www.pravda.com.ua/articles/2015/04/22/7065452/">http://www.pravda.com.ua/articles/2015/04/22/7065452/</a></p>
+</div>
+
+<div id="ftn16">
+<p><a href="#_ftnref16" name="_ftn16" title=""><sup><sup>[16]</sup></sup></a> <a href="http://lku.org.ua/press_articles/437">http://lku.org.ua/press_articles/437</a></p>
+</div>
+
+<div id="ftn17">
+<p><a href="#_ftnref17" name="_ftn17" title=""><sup><sup>[17]</sup></sup></a> <a href="http://lku.org.ua/press_articles/239">http://lku.org.ua/press_articles/239</a></p>
+</div>
+
+<div id="ftn18">
+<p><a href="#_ftnref18" name="_ftn18" title=""><sup><sup>[18]</sup></sup></a><a href="http://lku.org.ua/registry/dashboard">http://lku.org.ua/registry/dashboard</a> </p>
+</div>
+
+<div id="ftn20">
+<p><a href="#_ftnref20" name="_ftn20" title=""><sup><sup>[20]</sup></sup></a> <a href="http://lku.org.ua/press_articles/380">http://lku.org.ua/press_articles/380</a></p>
+</div>
+
+<div id="ftn21">
+<p><a href="#_ftnref21" name="_ftn21" title=""><sup><sup>[21]</sup></sup></a><a href=" http://lustration.minjust.gov.ua/main/checking/68"> http://lustration.minjust.gov.ua/main/checking/68</a></p>
+</div>
+</div></p>
+        </div>
+    </div>
+</div>
+
+</div><div class="container"></div>
+</body>
+</html>
